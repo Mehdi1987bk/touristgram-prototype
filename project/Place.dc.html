@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Карточка места</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
+
+  <div style="flex:none;position:relative;height:240px;background:url('../_blob/b6ea639ab08578ff5eb49288041389df') center/cover">
+    <a href="Destination.dc.html" aria-label="Назад" style="position:absolute;top:14px;left:12px;width:40px;height:40px;border-radius:20px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;color:#16262B">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </a>
+    <button onClick="{{toggleSave}}" aria-label="Сохранить место" style="position:absolute;top:14px;right:12px;width:40px;height:40px;border:none;border-radius:20px;background:rgba(255,255,255,0.92);cursor:pointer;display:flex;align-items:center;justify-content:center;color:{{saveColor}}">
+      <sc-if value="{{saved}}" hint-placeholder-val="{{false}}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+      </sc-if>
+      <sc-if value="{{notSaved}}" hint-placeholder-val="{{true}}">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+      </sc-if>
+    </button>
+    <span style="position:absolute;bottom:12px;right:12px;padding:5px 10px;border-radius:10px;background:rgba(18,42,82,0.62);color:#FFFFFF;font-size:11px;font-weight:700">1 из 12</span>
+  </div>
+
+  <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:18px 16px 0;gap:16px;box-sizing:border-box">
+
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:23px;font-weight:800;letter-spacing:-0.3px">Голубая мечеть</span>
+      <span style="font-size:13px;color:#5C6B70;font-weight:600">Достопримечательность · Султанахмет, Стамбул</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:800">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+        4.8 <span style="color:#5C6B70;font-weight:600">· 2 340 отзывов · 128 постов в Touristgram</span>
+      </span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;border:1.5px solid #E3EBED;border-radius:16px">
+      <span style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #EDF2F3">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span style="flex:1;font-size:13.5px;font-weight:700;color:#2E7D4F">Открыто · до 18:30</span>
+        <span style="font-size:11.5px;font-weight:600;color:#8A979C">часы из Google Places</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #EDF2F3">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5C6B70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span style="flex:1;font-size:13.5px;font-weight:600">Sultan Ahmet, Atmeydanı Cd. No:7, Fatih</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:12px;padding:13px 16px">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5C6B70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg>
+        <span style="flex:1;font-size:13.5px;font-weight:700;color:#1565D8">Показать на карте · как добраться</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span style="font-size:15.5px;font-weight:800">Советы из постов</span>
+      <div style="display:flex;gap:10px">
+        <a href="Post.dc.html" style="flex:1;display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:14px;background:#F2F6F7">
+          <span style="font-size:12.5px;line-height:1.45;color:#2E4B74">«Вход бесплатный, но нужна закрытая одежда — платки выдают на входе»</span>
+          <span style="font-size:11px;font-weight:800;color:#5C6B70">@aysel_k</span>
+        </a>
+        <a href="Post.dc.html" style="flex:1;display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:14px;background:#F2F6F7">
+          <span style="font-size:12.5px;line-height:1.45;color:#2E4B74">«Лучше приходить к открытию, к 9:00 — почти без очереди»</span>
+          <span style="font-size:11px;font-weight:800;color:#5C6B70">@murad.trip</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:none;display:flex;gap:12px;padding:14px 16px 26px;border-top:1px solid #EDF2F3">
+    <button onClick="{{toggleSave}}" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border:1.5px solid #1565D8;border-radius:16px;background:none;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:800;color:#1565D8">{{saveLabel}}</button>
+    <a href="Plan.dc.html" style="flex:1.4;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:14.5px;font-weight:800;box-sizing:border-box">В поездку
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+    </a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { saved: false };
+  }
+  renderVals() {
+    const saved = this.state.saved;
+    return {
+      saved: saved,
+      notSaved: !saved,
+      saveColor: saved ? '#1565D8' : '#16262B',
+      saveLabel: saved ? 'Сохранено' : 'Сохранить',
+      toggleSave: () => this.setState({ saved: !this.state.saved })
+    };
+  }
+}
+</script>
+</body>
+</html>

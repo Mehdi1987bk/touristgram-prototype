@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Жалоба на пост</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#5E7899;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
+
+  <a href="Main.dc.html" aria-label="Закрыть" style="flex:1;display:block;background:rgba(18,42,82,0.45)"></a>
+
+  <div style="flex:none;display:flex;flex-direction:column;background:#FFFFFF;border-radius:28px 28px 0 0;padding:10px 20px 30px;box-shadow:0 -12px 40px rgba(13,30,60,0.3)">
+
+    <span style="align-self:center;width:44px;height:5px;border-radius:3px;background:#D5E0E3;margin-bottom:14px"></span>
+
+    <div style="display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid #EDF2F3">
+      <span style="flex:none;width:44px;height:44px;border-radius:10px;background:url('../_blob/9c450275697208c51854706d2df00ece') center/cover"></span>
+      <span style="flex:1;display:flex;flex-direction:column;gap:1px">
+        <span style="font-size:16px;font-weight:800">Пожаловаться на пост</span>
+        <span style="font-size:12px;color:#5C6B70;font-weight:600">«Галатская башня на закате» · Айсель К.</span>
+      </span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;padding:4px 0 8px">
+      <sc-for list="{{reasons}}" as="r" hint-placeholder-count="5">
+        <div onClick="{{r.pick}}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #F2F6F7;cursor:pointer">
+          <span style="font-size:14.5px;font-weight:600">{{r.t}}</span>
+          <span style="flex:none;box-sizing:border-box;width:22px;height:22px;border-radius:11px;{{r.ring}}"></span>
+        </div>
+      </sc-for>
+    </div>
+
+    <span style="font-size:12px;color:#8A979C;font-weight:600;line-height:1.5;padding-bottom:14px">Жалоба анонимна. Модерация рассмотрит пост в течение 24 часов — автор не узнает, кто её отправил.</span>
+
+    <a href="Main.dc.html" style="box-sizing:border-box;padding:15px;border-radius:16px;background:#C2402A;color:#FFFFFF;font-size:15px;font-weight:800;text-align:center">Отправить жалобу</a>
+    <a href="Main.dc.html" style="margin-top:10px;box-sizing:border-box;padding:13px;border-radius:16px;color:#5C6B70;font-size:14px;font-weight:800;text-align:center">Отмена</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sel: 0 };
+  }
+  renderVals() {
+    const reasons = ['Спам или реклама', 'Недостоверная информация', 'Оскорбительный контент', 'Чужие фото или текст', 'Другое'].map((t, i) => ({
+      t: t,
+      ring: i === this.state.sel ? 'border:7px solid #1565D8' : 'border:2px solid #D5E0E3',
+      pick: () => this.setState({ sel: i })
+    }));
+    return { reasons: reasons };
+  }
+}
+</script>
+</body>
+</html>

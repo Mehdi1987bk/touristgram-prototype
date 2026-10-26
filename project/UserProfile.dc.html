@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Профиль автора</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
+
+  <div style="flex:none;height:56px;display:flex;align-items:center;gap:6px;padding:0 12px;box-sizing:border-box">
+    <a href="Post.dc.html" aria-label="Назад" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </a>
+    <span style="flex:1;font-size:16.5px;font-weight:800">@aysel_k</span>
+    <span style="padding:6px;color:#5C6B70;font-size:16px;font-weight:800;letter-spacing:1px">···</span>
+  </div>
+
+  <div style="flex:none;display:flex;align-items:center;gap:18px;padding:10px 20px 14px">
+    <img src="../_blob/286253317834a930566f50e2a20d570d" alt="Айсель К." style="flex:none;width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid #BBD7F7">
+    <div style="flex:1;display:flex;justify-content:space-between;padding:0 6px">
+      <span style="display:flex;flex-direction:column;align-items:center;gap:1px"><b style="font-size:17px">128</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">постов</span></span>
+      <span style="display:flex;flex-direction:column;align-items:center;gap:1px"><b style="font-size:17px">2,4 тыс</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">подписчиков</span></span>
+      <span style="display:flex;flex-direction:column;align-items:center;gap:1px"><b style="font-size:17px">348</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">подписок</span></span>
+    </div>
+  </div>
+
+  <div style="flex:none;display:flex;flex-direction:column;gap:3px;padding:0 20px 14px">
+    <span style="font-size:15px;font-weight:800">Айсель К.</span>
+    <span style="font-size:13px;color:#5C6B70;font-weight:600;line-height:1.5">Гид по Стамбулу 🇹🇷 · 12 стран · пишу про места без туристов</span>
+    <span style="display:flex;align-items:center;gap:5px;font-size:12.5px;color:#1565D8;font-weight:700">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      Стамбул, Турция
+    </span>
+  </div>
+
+  <div style="flex:none;display:flex;gap:10px;padding:0 20px 16px">
+    <button onClick="{{toggleFollow}}" style="flex:1.4;padding:12px;border-radius:14px;font-family:inherit;font-size:13.5px;font-weight:800;cursor:pointer;{{followStyle}}">{{followLabel}}</button>
+    <span style="flex:1;display:flex;align-items:center;justify-content:center;padding:12px;border:1.5px solid #D5E0E3;border-radius:14px;font-size:13.5px;font-weight:800;color:#16262B;box-sizing:border-box">Сообщение</span>
+  </div>
+
+  <div style="flex:none;display:flex;border-bottom:1px solid #EDF2F3">
+    <span style="flex:1;display:flex;justify-content:center;padding:11px;border-bottom:2px solid #1565D8;color:#1565D8">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+    </span>
+    <span style="flex:1;display:flex;justify-content:center;padding:11px;color:#8A979C">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg>
+    </span>
+  </div>
+
+  <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;padding:3px">
+    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../_blob/9c450275697208c51854706d2df00ece') center/cover;display:block"></a>
+    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../_blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover;display:block"></a>
+    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../_blob/b6ea639ab08578ff5eb49288041389df') center/cover;display:block"></a>
+    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../_blob/ad0278bb095880daacb821bbdb0247ff') center/cover;display:block"></a>
+    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../_blob/0f8f0b2e37bb0e11a41621bbefbb7006') center/cover;display:block"></a>
+    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../_blob/c5560198cebd89696efcd7b45a1accf1') center/cover;display:block"></a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { following: false };
+  }
+  renderVals() {
+    const f = this.state.following;
+    return {
+      followLabel: f ? 'Вы подписаны' : 'Подписаться',
+      followStyle: f
+        ? 'background:#FFFFFF;color:#2E4B74;border:1.5px solid #D5E0E3'
+        : 'background:#1565D8;color:#FFFFFF;border:1.5px solid #1565D8',
+      toggleFollow: () => this.setState({ following: !this.state.following })
+    };
+  }
+}
+</script>
+</body>
+</html>

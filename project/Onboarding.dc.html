@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Онбординг — выбор интересов</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden;padding:24px 24px 32px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <a href="Auth.dc.html" aria-label="Назад" style="width:40px;height:40px;margin-left:-8px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </a>
+    <a href="Main.dc.html" style="font-size:13.5px;font-weight:700;color:#8A979C">Пропустить</a>
+  </div>
+
+  <div style="margin-top:22px;display:flex;flex-direction:column;gap:8px">
+    <div style="font-size:26px;font-weight:800;letter-spacing:-0.4px;line-height:1.25">Что вам интересно в путешествиях?</div>
+    <div style="font-size:14.5px;color:#5C6B70;font-weight:500;line-height:1.5">Лента и советы AI-ассистента подстроятся под ваш выбор. Нажмите на карточки.</div>
+  </div>
+
+  <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;flex:1">
+    <sc-for list="{{chips}}" as="c" hint-placeholder-count="12">
+      <button onClick="{{c.pick}}" style="padding:12px 17px;border-radius:24px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;{{c.style}}">{{c.label}}</button>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="text-align:center;font-size:13px;font-weight:700;color:#5C6B70">Выбрано: {{count}} из 12</div>
+    <a href="Main.dc.html" style="box-sizing:border-box;padding:16px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:16px;font-weight:800;text-align:center">Готово — в приложение</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sel: { 'Гастрономия': true, 'История': true, 'Пляжи': true } };
+  }
+  renderVals() {
+    const names = ['Пляжи', 'Горы', 'Гастрономия', 'Музеи', 'Ночная жизнь', 'Шопинг', 'Природа', 'История', 'Архитектура', 'С детьми', 'Бюджетно', 'Люкс'];
+    const sel = this.state.sel;
+    const chips = names.map((n) => ({
+      label: n,
+      style: sel[n]
+        ? 'background:#1565D8;color:#FFFFFF;border:1.5px solid #1565D8'
+        : 'background:#FFFFFF;color:#16262B;border:1.5px solid #D5E0E3',
+      pick: () => {
+        const s = Object.assign({}, this.state.sel);
+        s[n] = !s[n];
+        this.setState({ sel: s });
+      }
+    }));
+    const count = names.filter((n) => sel[n]).length;
+    return { chips: chips, count: String(count) };
+  }
+}
+</script>
+</body>
+</html>
