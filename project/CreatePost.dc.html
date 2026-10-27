@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Новый пост</title>
+<title>New post</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -18,57 +18,98 @@ textarea::placeholder{color:#8A979C}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid #EDF2F3;box-sizing:border-box">
-    <a href="Main.dc.html" aria-label="Закрыть" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="Main.dc.html" aria-label="Close" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
     </a>
-    <span style="font-size:16px;font-weight:800">Новый пост</span>
-    <a href="Main.dc.html" style="padding:9px 14px;border-radius:14px;background:#1565D8;color:#FFFFFF;font-size:13.5px;font-weight:800">Опубликовать</a>
+    <span style="font-size:16px;font-weight:800">New post</span>
+    <a href="Main.dc.html" style="padding:9px 14px;border-radius:14px;background:#1565D8;color:#FFFFFF;font-size:13.5px;font-weight:800">Share</a>
   </div>
 
   <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:16px;gap:16px;box-sizing:border-box">
 
-    <div style="height:260px;border-radius:16px;background:url('../blob/286253317834a930566f50e2a20d570d') center/cover"></div>
+    <button onClick="{{nextPhoto}}" aria-label="Next photo" style="display:block;width:100%;height:260px;border:none;padding:0;border-radius:16px;background:url('../blob/{{heroHash}}') center/cover;box-sizing:border-box;cursor:pointer;font-family:inherit"></button>
 
     <div style="display:flex;gap:8px">
-      <button aria-label="Снять фото" style="flex:none;width:64px;height:64px;border:1.5px dashed #9DBCE8;border-radius:12px;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1565D8">
+      <button onClick="{{toggleCamera}}" aria-label="Take a photo" style="flex:none;width:64px;height:64px;border:{{camBorder}};border-radius:12px;background:{{camBg}};cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1565D8;box-sizing:border-box;padding:0;font-family:inherit">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
       </button>
-      <span style="width:64px;height:64px;border-radius:12px;background:url('../blob/286253317834a930566f50e2a20d570d') center/cover;border:2px solid #1565D8;box-sizing:border-box"></span>
-      <span style="width:64px;height:64px;border-radius:12px;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover"></span>
-      <span style="width:64px;height:64px;border-radius:12px;background:url('../blob/6aa376d4f9a4ee9f4b7a33ac9e7dff12') center/cover"></span>
-      <span style="width:64px;height:64px;border-radius:12px;background:url('../blob/c5560198cebd89696efcd7b45a1accf1') center/cover"></span>
+      <button onClick="{{pick0}}" aria-label="Select photo 1" style="flex:none;width:64px;height:64px;border-radius:12px;background:url('../blob/286253317834a930566f50e2a20d570d') center/cover;border:{{thumb0}};box-sizing:border-box;padding:0;cursor:pointer;font-family:inherit"></button>
+      <button onClick="{{pick1}}" aria-label="Select photo 2" style="flex:none;width:64px;height:64px;border-radius:12px;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover;border:{{thumb1}};box-sizing:border-box;padding:0;cursor:pointer;font-family:inherit"></button>
+      <button onClick="{{pick2}}" aria-label="Select photo 3" style="flex:none;width:64px;height:64px;border-radius:12px;background:url('../blob/6aa376d4f9a4ee9f4b7a33ac9e7dff12') center/cover;border:{{thumb2}};box-sizing:border-box;padding:0;cursor:pointer;font-family:inherit"></button>
+      <button onClick="{{pick3}}" aria-label="Select photo 4" style="flex:none;width:64px;height:64px;border-radius:12px;background:url('../blob/c5560198cebd89696efcd7b45a1accf1') center/cover;border:{{thumb3}};box-sizing:border-box;padding:0;cursor:pointer;font-family:inherit"></button>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:7px">
-      <label for="caption" style="font-size:12.5px;font-weight:700;color:#2E4B74">Подпись</label>
-      <textarea id="caption" rows="3" placeholder="Расскажите о месте: что понравилось, что посоветуете…" style="box-sizing:border-box;width:100%;padding:13px 15px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:14px;color:#16262B;background:#FFFFFF;resize:none;line-height:1.5"></textarea>
+      <label for="caption" style="font-size:12.5px;font-weight:700;color:#2E4B74">Caption</label>
+      <textarea id="caption" rows="3" placeholder="Tell us about this place: what you loved, what to try…" style="box-sizing:border-box;width:100%;padding:13px 15px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:14px;color:#16262B;background:#FFFFFF;resize:none;line-height:1.5"></textarea>
     </div>
 
     <div style="display:flex;flex-direction:column;border:1.5px solid #E3EBED;border-radius:16px">
-      <button style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:none;background:none;cursor:pointer;font-family:inherit;text-align:left;border-bottom:1px solid #EDF2F3">
+      <button onClick="{{nextPlace}}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:none;background:none;cursor:pointer;font-family:inherit;text-align:left;border-bottom:1px solid #EDF2F3">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1565D8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        <span style="flex:1;font-size:14px;font-weight:700;color:#16262B">Место</span>
-        <span style="font-size:13px;font-weight:600;color:#1565D8">Приморский бульвар, Баку</span>
+        <span style="flex:1;font-size:14px;font-weight:700;color:#16262B">Place</span>
+        <span style="font-size:13px;font-weight:600;color:#1565D8">{{placeLabel}}</span>
       </button>
-      <button style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:none;background:none;cursor:pointer;font-family:inherit;text-align:left;border-bottom:1px solid #EDF2F3">
+      <button onClick="{{nextTrip}}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:none;background:none;cursor:pointer;font-family:inherit;text-align:left;border-bottom:1px solid #EDF2F3">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C6B70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
-        <span style="flex:1;font-size:14px;font-weight:700;color:#16262B">Привязать к поездке</span>
-        <span style="font-size:13px;font-weight:600;color:#8A979C">Не выбрано</span>
+        <span style="flex:1;font-size:14px;font-weight:700;color:#16262B">Add to trip</span>
+        <span style="font-size:13px;font-weight:600;color:{{tripColor}}">{{tripLabel}}</span>
       </button>
-      <button style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:none;background:none;cursor:pointer;font-family:inherit;text-align:left">
+      <button onClick="{{nextAudience}}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:none;background:none;cursor:pointer;font-family:inherit;text-align:left">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C6B70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17"/><path d="M3.5 15h17"/><path d="M12 3a14.5 14.5 0 0 1 0 18"/><path d="M12 3a14.5 14.5 0 0 0 0 18"/></svg>
-        <span style="flex:1;font-size:14px;font-weight:700;color:#16262B">Кто видит</span>
-        <span style="font-size:13px;font-weight:600;color:#8A979C">Все</span>
+        <span style="flex:1;font-size:14px;font-weight:700;color:#16262B">Who can see it</span>
+        <span style="font-size:13px;font-weight:600;color:{{audienceColor}}">{{audienceLabel}}</span>
       </button>
     </div>
 
-    <div style="font-size:11.5px;color:#8A979C;font-weight:600;line-height:1.5">Фото проходит модерацию автоматически. Геометка помогает другим найти место и добавляет пост на его страницу.</div>
+    <div style="font-size:11.5px;color:#8A979C;font-weight:600;line-height:1.5">Photos are reviewed automatically. A location tag helps others find the spot and adds your post to its page.</div>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    this.state = { photo: 0, camera: false, place: 0, trip: 0, audience: 0 };
+  }
+  renderVals() {
+    var photos = [
+      '286253317834a930566f50e2a20d570d',
+      'ceb7a8f77c69fddfeaa82fa0e76c51e2',
+      '6aa376d4f9a4ee9f4b7a33ac9e7dff12',
+      'c5560198cebd89696efcd7b45a1accf1'
+    ];
+    var places = ['Seaside Boulevard, Baku', 'Maiden Tower, Baku', 'Heydar Aliyev Center, Baku'];
+    var trips = ['None', 'Istanbul, Nov 14-17', 'Gabala, 3 days'];
+    var audiences = ['Everyone', 'Followers', 'Only me'];
+    var s = this.state;
+    var edge = function (i) {
+      return i === s.photo ? '2px solid #1565D8' : '2px solid transparent';
+    };
+    return {
+      heroHash: photos[s.photo],
+      thumb0: edge(0),
+      thumb1: edge(1),
+      thumb2: edge(2),
+      thumb3: edge(3),
+      camBorder: s.camera ? '1.5px solid #1565D8' : '1.5px dashed #9DBCE8',
+      camBg: s.camera ? '#EAF2FD' : 'none',
+      placeLabel: places[s.place],
+      tripLabel: trips[s.trip],
+      tripColor: s.trip === 0 ? '#8A979C' : '#1565D8',
+      audienceLabel: audiences[s.audience],
+      audienceColor: s.audience === 0 ? '#8A979C' : '#1565D8',
+      nextPhoto: () => this.setState({ photo: (s.photo + 1) % photos.length }),
+      pick0: () => this.setState({ photo: 0 }),
+      pick1: () => this.setState({ photo: 1 }),
+      pick2: () => this.setState({ photo: 2 }),
+      pick3: () => this.setState({ photo: 3 }),
+      toggleCamera: () => this.setState({ camera: !s.camera }),
+      nextPlace: () => this.setState({ place: (s.place + 1) % places.length }),
+      nextTrip: () => this.setState({ trip: (s.trip + 1) % trips.length }),
+      nextAudience: () => this.setState({ audience: (s.audience + 1) % audiences.length })
+    };
+  }
 }
 </script>
 </body>

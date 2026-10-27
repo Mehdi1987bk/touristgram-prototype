@@ -1,36 +1,61 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Touristgram — кликабельный прототип</title>
+<title>touristgram — clickable prototype</title>
 <style>
-  html,body{margin:0;height:100%;background:#0e1726;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;}
-  .wrap{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 12px;box-sizing:border-box;}
-  h1{color:#fff;font-size:18px;font-weight:600;margin:0;letter-spacing:.2px;}
-  h1 span{color:#5b8def;}
-  .hint{color:#8fa3c0;font-size:13px;margin:0;}
-  .phone{width:390px;height:844px;background:#000;border-radius:44px;padding:10px;box-shadow:0 30px 80px rgba(0,0,0,.55);transform-origin:top center;}
-  .phone iframe{width:390px;height:844px;border:0;border-radius:34px;background:#fff;display:block;}
-  @media (max-width: 480px){
+  :root{
+    --bg:#0d1524;
+    --bg-glow:#16233c;
+    --text:#f2f5fa;
+    --muted:#8ba0c2;
+    --accent:#5b8def;
+    --frame:#05080f;
+  }
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:radial-gradient(900px 600px at 50% -10%, var(--bg-glow), var(--bg));
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    color:var(--text);
+  }
+  .wrap{
+    min-height:100%;box-sizing:border-box;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:16px;padding-block:22px;
+    padding-left:max(16px, env(safe-area-inset-left, 0px));
+    padding-right:max(16px, env(safe-area-inset-right, 0px));
+  }
+  h1{font-size:17px;font-weight:600;margin:0;letter-spacing:.2px;}
+  h1 b{color:var(--accent);font-weight:700;}
+  .hint{color:var(--muted);font-size:13px;margin:0;}
+  .phone{
+    flex:none;width:390px;height:844px;background:var(--frame);
+    border-radius:46px;padding:10px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6), inset 0 0 0 1px #1c2a44;
+    transform-origin:top center;
+  }
+  .phone iframe{width:390px;height:844px;border:0;border-radius:36px;background:#fff;display:block;}
+  @media (max-width:480px){
     .wrap{padding:0;gap:0;}
     h1,.hint{display:none;}
-    .phone{width:100vw;height:100dvh;border-radius:0;padding:0;box-shadow:none;transform:none!important;}
+    .phone{width:100vw;height:100dvh;border-radius:0;padding:0;box-shadow:none;transform:none!important;margin:0!important;}
     .phone iframe{width:100vw;height:100dvh;border-radius:0;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1><span>Touristgram</span> · кликабельный прототип</h1>
-  <p class="hint">Экраны кликабельны — начните с кнопки «Начать»</p>
-  <div class="phone"><iframe src="project/Splash.dc.html" title="Touristgram"></iframe></div>
+  <h1><b>touristgram</b> · clickable prototype</h1>
+  <p class="hint">All 25 screens are live — tap anything to move through the app</p>
+  <div class="phone"><iframe src="project/Splash.dc.html" title="touristgram"></iframe></div>
 </div>
 <script>
   function fit(){
     if(window.innerWidth<=480) return;
     var ph=document.querySelector('.phone');
-    var s=Math.min(1,(window.innerHeight-130)/864);
+    var s=Math.min(1,(window.innerHeight-120)/864);
     ph.style.transform='scale('+s+')';
     ph.style.marginBottom=(-(1-s)*864)+'px';
   }

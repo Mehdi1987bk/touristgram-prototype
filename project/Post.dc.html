@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Пост и комментарии</title>
+<title>Post · touristgram</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -18,81 +18,121 @@ input::placeholder{color:#8A979C}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;height:54px;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid #EDF2F3;box-sizing:border-box">
-    <a href="Main.dc.html" aria-label="Назад" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="Main.dc.html" aria-label="Back" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
     </a>
-    <span style="font-size:16px;font-weight:800">Публикация</span>
+    <span style="font-size:16px;font-weight:800">Post</span>
+    <span style="flex:1"></span>
+    <a href="Report.dc.html" aria-label="Report" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+    </a>
   </div>
 
   <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column">
     <div style="display:flex;align-items:center;gap:10px;padding:10px 16px">
-      <img src="../blob/286253317834a930566f50e2a20d570d" alt="Айсель К." style="width:38px;height:38px;border-radius:50%;object-fit:cover">
+      <a href="UserProfile.dc.html" style="flex:none;display:flex">
+        <img src="../blob/286253317834a930566f50e2a20d570d" alt="Aysel K." style="width:38px;height:38px;border-radius:50%;object-fit:cover">
+      </a>
       <div style="flex:1;display:flex;flex-direction:column;gap:1px">
-        <a href="UserProfile.dc.html" style="font-size:14px;font-weight:700">Айсель К.</a>
+        <a href="UserProfile.dc.html" style="font-size:14px;font-weight:700">Aysel K.</a>
         <a href="Place.dc.html" style="font-size:11.5px;color:#1565D8;font-weight:700;display:flex;align-items:center;gap:4px">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          Галатская башня · Стамбул
+          Galata Tower · Istanbul
         </a>
       </div>
-      <button style="border:1.5px solid #1565D8;background:none;border-radius:16px;padding:7px 14px;cursor:pointer;color:#1565D8;font-family:inherit;font-size:12.5px;font-weight:800">Подписаться</button>
+      <button onClick="{{toggleFollow}}" style="border:1.5px solid {{followBorder}};background:{{followBg}};border-radius:16px;padding:7px 14px;cursor:pointer;color:{{followColor}};font-family:inherit;font-size:12.5px;font-weight:800">{{followLabel}}</button>
     </div>
 
     <div style="position:relative;height:290px;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover">
-      <span style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:5px"><span style="width:7px;height:7px;border-radius:4px;background:#FFFFFF"></span><span style="width:7px;height:7px;border-radius:4px;background:rgba(255,255,255,0.55)"></span><span style="width:7px;height:7px;border-radius:4px;background:rgba(255,255,255,0.55)"></span></span>
+      <sc-if value="{{onSlide2}}" hint-placeholder-val="">
+        <span style="position:absolute;top:0;left:0;right:0;bottom:0;background:url('../blob/0f8f0b2e37bb0e11a41621bbefbb7006') center/cover"></span>
+      </sc-if>
+      <sc-if value="{{onSlide3}}" hint-placeholder-val="">
+        <span style="position:absolute;top:0;left:0;right:0;bottom:0;background:url('../blob/82fcbdb147eeb04b780b6c0728529230') center/cover"></span>
+      </sc-if>
+      <button onClick="{{nextPhoto}}" aria-label="Next photo" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;padding:0;margin:0;background:transparent;cursor:pointer"></button>
+      <sc-if value="{{shared}}" hint-placeholder-val="">
+        <span style="position:absolute;top:10px;left:0;right:0;display:flex;justify-content:center;pointer-events:none">
+          <span style="background:rgba(22,38,43,0.82);color:#FFFFFF;border-radius:14px;padding:6px 12px;font-size:11.5px;font-weight:700">Link copied</span>
+        </span>
+      </sc-if>
+      <span style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:5px;pointer-events:none"><button onClick="{{goSlide1}}" aria-label="Photo 1" style="width:7px;height:7px;border-radius:4px;border:none;padding:0;cursor:pointer;pointer-events:auto;background:{{dot1}}"></button><button onClick="{{goSlide2}}" aria-label="Photo 2" style="width:7px;height:7px;border-radius:4px;border:none;padding:0;cursor:pointer;pointer-events:auto;background:{{dot2}}"></button><button onClick="{{goSlide3}}" aria-label="Photo 3" style="width:7px;height:7px;border-radius:4px;border:none;padding:0;cursor:pointer;pointer-events:auto;background:{{dot3}}"></button></span>
     </div>
 
     <div style="display:flex;align-items:center;gap:16px;padding:10px 16px 4px">
-      <button onClick="{{toggleLike}}" aria-label="Нравится" style="border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:{{likeColor}}">
-        <sc-if value="{{liked}}" hint-placeholder-val="{{false}}">
+      <button onClick="{{toggleLike}}" aria-label="Like" style="border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:{{likeColor}}">
+        <sc-if value="{{liked}}" hint-placeholder-val="">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 20s-7-4.5-9-9a4.8 4.8 0 0 1 9-2.2A4.8 4.8 0 0 1 21 11c-2 4.5-9 9-9 9z"/></svg>
         </sc-if>
-        <sc-if value="{{notLiked}}" hint-placeholder-val="{{true}}">
+        <sc-if value="{{notLiked}}" hint-placeholder-val="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-9-9a4.8 4.8 0 0 1 9-2.2A4.8 4.8 0 0 1 21 11c-2 4.5-9 9-9 9z"/></svg>
         </sc-if>
         {{likes}}
       </button>
-      <span style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#16262B">
+      <button onClick="{{focusComment}}" aria-label="Add a comment" style="border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;font-weight:700;color:{{commentColor}}">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l2.5-3A8.5 8.5 0 1 1 21 11.5z"/></svg>
-        36
-      </span>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16262B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+        {{comments}}
+      </button>
+      <button onClick="{{toggleShare}}" aria-label="Share" style="border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;color:{{shareColor}}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
       <span style="flex:1"></span>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16262B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+      <button onClick="{{toggleSave}}" aria-label="Save" style="border:none;background:none;padding:0;cursor:pointer;display:flex;align-items:center;color:{{saveColor}}">
+        <sc-if value="{{saved}}" hint-placeholder-val="">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+        </sc-if>
+        <sc-if value="{{notSaved}}" hint-placeholder-val="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+        </sc-if>
+      </button>
     </div>
 
     <div style="padding:4px 16px 10px;font-size:13.5px;line-height:1.5;border-bottom:1px solid #EDF2F3">
-      <b>Айсель К.</b> Закат с Галатской башни. Совет: приходите за час до заката — очередь вдвое короче, а свет уже золотой. Билет лучше брать онлайн.
+      <a href="UserProfile.dc.html"><b>Aysel K.</b></a> Sunset from Galata Tower. Come an hour early — the queue is half as long and the light is already golden. Book your ticket online.
     </div>
 
     <div style="display:flex;flex-direction:column;gap:14px;padding:14px 16px">
       <div style="display:flex;gap:10px">
-        <span style="flex:none;width:32px;height:32px;border-radius:16px;background:#5F7A4E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">ДЖ</span>
-        <div style="display:flex;flex-direction:column;gap:3px">
-          <span style="font-size:13px;line-height:1.45"><b>Джавид</b> Был там в прошлом месяце — подтверждаю, после 17:00 не протолкнуться!</span>
-          <span style="font-size:11px;color:#8A979C;font-weight:600">1 ч · Ответить · 12 нравится</span>
+        <a href="UserProfile.dc.html" style="flex:none;width:32px;height:32px;border-radius:16px;background:#5F7A4E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">JV</a>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+          <span style="font-size:13px;line-height:1.45"><a href="UserProfile.dc.html"><b>Javid</b></a> Was there last month, can confirm — after 5pm you can barely move!</span>
+          <span style="font-size:11px;color:#8A979C;font-weight:600;display:flex;align-items:center;gap:5px">
+            <span>1h</span><span>·</span>
+            <button onClick="{{replyJavid}}" style="border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:11px;font-weight:600;color:{{replyJavidColor}}">Reply</button>
+            <span>·</span>
+            <button onClick="{{likeJavid}}" style="border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:11px;font-weight:600;color:{{likeJavidColor}}">{{likesJavid}} likes</button>
+          </span>
         </div>
       </div>
       <div style="display:flex;gap:10px">
-        <span style="flex:none;width:32px;height:32px;border-radius:16px;background:#8A5FA0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">НР</span>
-        <div style="display:flex;flex-direction:column;gap:3px">
-          <span style="font-size:13px;line-height:1.45"><b>Нигяр</b> Сохранила в поездку, спасибо за совет 🙌</span>
-          <span style="font-size:11px;color:#8A979C;font-weight:600">54 мин · Ответить · 4 нравится</span>
+        <a href="UserProfile.dc.html" style="flex:none;width:32px;height:32px;border-radius:16px;background:#8A5FA0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">NR</a>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+          <span style="font-size:13px;line-height:1.45"><a href="UserProfile.dc.html"><b>Nigar</b></a> Saved it to my trip, thanks for the tip 🙌</span>
+          <span style="font-size:11px;color:#8A979C;font-weight:600;display:flex;align-items:center;gap:5px">
+            <span>54m</span><span>·</span>
+            <button onClick="{{replyNigar}}" style="border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:11px;font-weight:600;color:{{replyNigarColor}}">Reply</button>
+            <span>·</span>
+            <button onClick="{{likeNigar}}" style="border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:11px;font-weight:600;color:{{likeNigarColor}}">{{likesNigar}} likes</button>
+          </span>
         </div>
       </div>
       <div style="display:flex;gap:10px">
-        <span style="flex:none;width:32px;height:32px;border-radius:16px;background:#B07D46;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">РМ</span>
-        <div style="display:flex;flex-direction:column;gap:3px">
-          <span style="font-size:13px;line-height:1.45"><b>Руслан М.</b> А сколько стоит вход сейчас?</span>
-          <span style="font-size:11px;color:#8A979C;font-weight:600">20 мин · Ответить</span>
+        <a href="UserProfile.dc.html" style="flex:none;width:32px;height:32px;border-radius:16px;background:#B07D46;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">RM</a>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+          <span style="font-size:13px;line-height:1.45"><a href="UserProfile.dc.html"><b>Ruslan M.</b></a> How much is a ticket now?</span>
+          <span style="font-size:11px;color:#8A979C;font-weight:600;display:flex;align-items:center;gap:5px">
+            <span>20m</span><span>·</span>
+            <button onClick="{{replyRuslan}}" style="border:none;background:none;padding:0;cursor:pointer;font-family:inherit;font-size:11px;font-weight:600;color:{{replyRuslanColor}}">Reply</button>
+          </span>
         </div>
       </div>
     </div>
   </div>
 
   <div style="flex:none;display:flex;align-items:center;gap:10px;padding:10px 16px 22px;border-top:1px solid #EDF2F3">
-    <span style="flex:none;width:34px;height:34px;border-radius:17px;background:#2E4B74;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">ТГ</span>
-    <input aria-label="Новый комментарий" placeholder="Добавить комментарий…" style="flex:1;box-sizing:border-box;padding:11px 14px;border:1.5px solid #D5E0E3;border-radius:20px;font-family:inherit;font-size:13.5px;color:#16262B;background:#FFFFFF">
-    <button aria-label="Отправить комментарий" style="flex:none;width:38px;height:38px;border:none;border-radius:19px;background:#1565D8;cursor:pointer;display:flex;align-items:center;justify-content:center">
+    <a href="Profile.dc.html" style="flex:none;width:34px;height:34px;border-radius:17px;background:#2E4B74;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">TG</a>
+    <input aria-label="New comment" placeholder="{{commentPlaceholder}}" style="flex:1;box-sizing:border-box;padding:11px 14px;border:1.5px solid {{inputBorder}};border-radius:20px;font-family:inherit;font-size:13.5px;color:#16262B;background:#FFFFFF">
+    <button onClick="{{sendComment}}" aria-label="Send comment" style="flex:none;width:38px;height:38px;border:none;border-radius:19px;background:{{sendBg}};cursor:pointer;display:flex;align-items:center;justify-content:center">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
     </button>
   </div>
@@ -102,16 +142,95 @@ input::placeholder{color:#8A979C}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = {
+      liked: false,
+      following: false,
+      saved: false,
+      shared: false,
+      slide: 0,
+      replyTo: '',
+      composing: false,
+      posted: 0,
+      likedJavid: false,
+      likedNigar: false
+    };
   }
   renderVals() {
-    const liked = this.state.liked;
+    const s = this.state;
+    const dot = (i) => (s.slide === i ? '#FFFFFF' : 'rgba(255,255,255,0.55)');
+    const replyColor = (name) => (s.replyTo === name ? '#1565D8' : '#8A979C');
+    const setReply = (name) => () => this.setState({
+      replyTo: this.state.replyTo === name ? '' : name,
+      composing: false
+    });
+    const active = s.composing || s.replyTo !== '';
+    let placeholder = 'Add a comment…';
+    if (s.replyTo) {
+      placeholder = 'Reply to ' + s.replyTo + '…';
+    } else if (s.posted > 0) {
+      placeholder = 'Comment posted';
+    }
     return {
-      liked: liked,
-      notLiked: !liked,
-      likes: String(liked ? 215 : 214),
-      likeColor: liked ? '#C2321B' : '#16262B',
-      toggleLike: () => this.setState({ liked: !this.state.liked })
+      liked: s.liked,
+      notLiked: !s.liked,
+      likes: String(s.liked ? 215 : 214),
+      likeColor: s.liked ? '#C2321B' : '#16262B',
+      toggleLike: () => this.setState({ liked: !this.state.liked }),
+
+      followLabel: s.following ? 'Following' : 'Follow',
+      followColor: s.following ? '#FFFFFF' : '#1565D8',
+      followBg: s.following ? '#1565D8' : 'none',
+      followBorder: '#1565D8',
+      toggleFollow: () => this.setState({ following: !this.state.following }),
+
+      dot1: dot(0),
+      dot2: dot(1),
+      dot3: dot(2),
+      onSlide2: s.slide === 1,
+      onSlide3: s.slide === 2,
+      goSlide1: () => this.setState({ slide: 0 }),
+      goSlide2: () => this.setState({ slide: 1 }),
+      goSlide3: () => this.setState({ slide: 2 }),
+      nextPhoto: () => this.setState({ slide: (this.state.slide + 1) % 3 }),
+
+      comments: String(36 + s.posted),
+      commentColor: active ? '#1565D8' : '#16262B',
+      focusComment: () => {
+        const on = this.state.composing || this.state.replyTo !== '';
+        this.setState({ composing: !on, replyTo: '' });
+      },
+
+      shared: s.shared,
+      shareColor: s.shared ? '#1565D8' : '#16262B',
+      toggleShare: () => this.setState({ shared: !this.state.shared }),
+
+      saved: s.saved,
+      notSaved: !s.saved,
+      saveColor: s.saved ? '#1565D8' : '#16262B',
+      toggleSave: () => this.setState({ saved: !this.state.saved }),
+
+      replyJavid: setReply('Javid'),
+      replyNigar: setReply('Nigar'),
+      replyRuslan: setReply('Ruslan'),
+      replyJavidColor: replyColor('Javid'),
+      replyNigarColor: replyColor('Nigar'),
+      replyRuslanColor: replyColor('Ruslan'),
+
+      likesJavid: String(s.likedJavid ? 13 : 12),
+      likesNigar: String(s.likedNigar ? 5 : 4),
+      likeJavidColor: s.likedJavid ? '#C2321B' : '#8A979C',
+      likeNigarColor: s.likedNigar ? '#C2321B' : '#8A979C',
+      likeJavid: () => this.setState({ likedJavid: !this.state.likedJavid }),
+      likeNigar: () => this.setState({ likedNigar: !this.state.likedNigar }),
+
+      commentPlaceholder: placeholder,
+      inputBorder: active ? '#1565D8' : '#D5E0E3',
+      sendBg: s.posted > 0 ? '#0F4FAE' : '#1565D8',
+      sendComment: () => this.setState({
+        posted: this.state.posted + 1,
+        replyTo: '',
+        composing: false
+      })
     };
   }
 }

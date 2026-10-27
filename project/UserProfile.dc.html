@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Профиль автора</title>
+<title>@aysel_k · touristgram</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,69 +17,164 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;height:56px;display:flex;align-items:center;gap:6px;padding:0 12px;box-sizing:border-box">
-    <a href="Post.dc.html" aria-label="Назад" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="Post.dc.html" aria-label="Back" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
     </a>
     <span style="flex:1;font-size:16.5px;font-weight:800">@aysel_k</span>
-    <span style="padding:6px;color:#5C6B70;font-size:16px;font-weight:800;letter-spacing:1px">···</span>
+    <a href="Report.dc.html" aria-label="More" style="padding:6px;color:#5C6B70;font-size:16px;font-weight:800;letter-spacing:1px">···</a>
   </div>
 
   <div style="flex:none;display:flex;align-items:center;gap:18px;padding:10px 20px 14px">
-    <img src="../blob/286253317834a930566f50e2a20d570d" alt="Айсель К." style="flex:none;width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid #BBD7F7">
+    <a href="Post.dc.html" aria-label="Latest post by Aysel K." style="flex:none;display:flex">
+      <img src="../blob/286253317834a930566f50e2a20d570d" alt="Aysel K." style="flex:none;width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid #BBD7F7">
+    </a>
     <div style="flex:1;display:flex;justify-content:space-between;padding:0 6px">
-      <span style="display:flex;flex-direction:column;align-items:center;gap:1px"><b style="font-size:17px">128</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">постов</span></span>
-      <span style="display:flex;flex-direction:column;align-items:center;gap:1px"><b style="font-size:17px">2,4 тыс</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">подписчиков</span></span>
-      <span style="display:flex;flex-direction:column;align-items:center;gap:1px"><b style="font-size:17px">348</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">подписок</span></span>
+      <button onClick="{{pickPosts}}" style="display:flex;flex-direction:column;align-items:center;gap:1px;padding:0;background:none;border:none;color:inherit;font-family:inherit;cursor:pointer;{{postsStatStyle}}"><b style="font-size:17px">128</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">posts</span></button>
+      <button onClick="{{pickFollowers}}" style="display:flex;flex-direction:column;align-items:center;gap:1px;padding:0;background:none;border:none;color:inherit;font-family:inherit;cursor:pointer;{{followersStatStyle}}"><b style="font-size:17px">2.4K</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">followers</span></button>
+      <button onClick="{{pickFollowing}}" style="display:flex;flex-direction:column;align-items:center;gap:1px;padding:0;background:none;border:none;color:inherit;font-family:inherit;cursor:pointer;{{followingStatStyle}}"><b style="font-size:17px">348</b><span style="font-size:11.5px;color:#5C6B70;font-weight:600">following</span></button>
     </div>
   </div>
 
+  <sc-if value="{{showStatNote}}" hint-placeholder-val="">
+    <div style="flex:none;display:flex;padding:0 20px 12px">
+      <span style="padding:7px 11px;border-radius:12px;background:#EEF4FE;color:#1565D8;font-size:11.5px;font-weight:700">{{statNote}}</span>
+    </div>
+  </sc-if>
+
   <div style="flex:none;display:flex;flex-direction:column;gap:3px;padding:0 20px 14px">
-    <span style="font-size:15px;font-weight:800">Айсель К.</span>
-    <span style="font-size:13px;color:#5C6B70;font-weight:600;line-height:1.5">Гид по Стамбулу 🇹🇷 · 12 стран · пишу про места без туристов</span>
-    <span style="display:flex;align-items:center;gap:5px;font-size:12.5px;color:#1565D8;font-weight:700">
+    <span style="font-size:15px;font-weight:800">Aysel K.</span>
+    <span style="font-size:13px;color:#5C6B70;font-weight:600;line-height:1.5">Istanbul guide 🇹🇷 · 12 countries · crowd-free spots</span>
+    <a href="Destination.dc.html" style="display:flex;align-items:center;gap:5px;font-size:12.5px;color:#1565D8;font-weight:700">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-      Стамбул, Турция
-    </span>
+      Istanbul, Turkey
+    </a>
   </div>
 
   <div style="flex:none;display:flex;gap:10px;padding:0 20px 16px">
     <button onClick="{{toggleFollow}}" style="flex:1.4;padding:12px;border-radius:14px;font-family:inherit;font-size:13.5px;font-weight:800;cursor:pointer;{{followStyle}}">{{followLabel}}</button>
-    <span style="flex:1;display:flex;align-items:center;justify-content:center;padding:12px;border:1.5px solid #D5E0E3;border-radius:14px;font-size:13.5px;font-weight:800;color:#16262B;box-sizing:border-box">Сообщение</span>
+    <button onClick="{{toggleMessage}}" style="flex:1;display:flex;align-items:center;justify-content:center;padding:12px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:13.5px;font-weight:800;cursor:pointer;box-sizing:border-box;{{messageStyle}}">{{messageLabel}}</button>
   </div>
 
   <div style="flex:none;display:flex;border-bottom:1px solid #EDF2F3">
-    <span style="flex:1;display:flex;justify-content:center;padding:11px;border-bottom:2px solid #1565D8;color:#1565D8">
+    <button onClick="{{showPosts}}" aria-label="Posts" style="flex:1;display:flex;align-items:center;justify-content:center;padding:11px;background:none;font-family:inherit;cursor:pointer;border:none;{{postsTabStyle}}">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
-    </span>
-    <span style="flex:1;display:flex;justify-content:center;padding:11px;color:#8A979C">
+    </button>
+    <button onClick="{{showMap}}" aria-label="Travel map" style="flex:1;display:flex;align-items:center;justify-content:center;padding:11px;background:none;font-family:inherit;cursor:pointer;border:none;{{mapTabStyle}}">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg>
-    </span>
+    </button>
   </div>
 
-  <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;padding:3px">
-    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover;display:block"></a>
-    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover;display:block"></a>
-    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../blob/b6ea639ab08578ff5eb49288041389df') center/cover;display:block"></a>
-    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../blob/ad0278bb095880daacb821bbdb0247ff') center/cover;display:block"></a>
-    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../blob/0f8f0b2e37bb0e11a41621bbefbb7006') center/cover;display:block"></a>
-    <a href="Post.dc.html" style="aspect-ratio:1;background:url('../blob/c5560198cebd89696efcd7b45a1accf1') center/cover;display:block"></a>
-  </div>
+  <sc-if value="{{onPosts}}" hint-placeholder-val="true">
+    <div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:repeat(3, minmax(0,1fr));grid-auto-rows:min-content;align-content:start;gap:3px;padding:3px">
+      <a href="{{tileHref}}" style="aspect-ratio:1;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover;display:block"></a>
+      <a href="{{tileHref}}" style="aspect-ratio:1;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover;display:block"></a>
+      <a href="{{tileHref}}" style="aspect-ratio:1;background:url('../blob/b6ea639ab08578ff5eb49288041389df') center/cover;display:block"></a>
+      <a href="{{tileHref}}" style="aspect-ratio:1;background:url('../blob/ad0278bb095880daacb821bbdb0247ff') center/cover;display:block"></a>
+      <a href="{{tileHref}}" style="aspect-ratio:1;background:url('../blob/0f8f0b2e37bb0e11a41621bbefbb7006') center/cover;display:block"></a>
+      <a href="{{tileHref}}" style="aspect-ratio:1;background:url('../blob/c5560198cebd89696efcd7b45a1accf1') center/cover;display:block"></a>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{onMap}}" hint-placeholder-val="">
+    <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:9px;padding:13px 20px 16px;box-sizing:border-box">
+      <div style="flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px">
+        <span style="font-size:11.5px;font-weight:700;color:#5C6B70">12 countries · 48 cities visited</span>
+        <a href="MapView.dc.html" style="font-size:11.5px;font-weight:800;color:#1565D8;white-space:nowrap">Open full map</a>
+      </div>
+      <a href="Destination.dc.html" style="flex:none;display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:16px;background:#F7FAFB;border:1px solid #E3EBED;box-sizing:border-box">
+        <span style="flex:none;width:34px;height:34px;border-radius:17px;background:#E8F1FD;display:flex;align-items:center;justify-content:center;color:#1565D8">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:13.5px;font-weight:800">Turkey</span>
+          <span style="font-size:11.5px;font-weight:600;color:#5C6B70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Istanbul · Cappadocia · Izmir</span>
+        </span>
+        <span style="flex:none;font-size:11.5px;font-weight:800;color:#1565D8">64 posts</span>
+      </a>
+      <a href="MapView.dc.html" style="flex:none;display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:16px;background:#F7FAFB;border:1px solid #E3EBED;box-sizing:border-box">
+        <span style="flex:none;width:34px;height:34px;border-radius:17px;background:#E8F1FD;display:flex;align-items:center;justify-content:center;color:#1565D8">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:13.5px;font-weight:800">Georgia</span>
+          <span style="font-size:11.5px;font-weight:600;color:#5C6B70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tbilisi · Batumi</span>
+        </span>
+        <span style="flex:none;font-size:11.5px;font-weight:800;color:#1565D8">21 posts</span>
+      </a>
+      <a href="MapView.dc.html" style="flex:none;display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:16px;background:#F7FAFB;border:1px solid #E3EBED;box-sizing:border-box">
+        <span style="flex:none;width:34px;height:34px;border-radius:17px;background:#E8F1FD;display:flex;align-items:center;justify-content:center;color:#1565D8">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:13.5px;font-weight:800">Greece</span>
+          <span style="font-size:11.5px;font-weight:600;color:#5C6B70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Athens · Santorini</span>
+        </span>
+        <span style="flex:none;font-size:11.5px;font-weight:800;color:#1565D8">18 posts</span>
+      </a>
+      <a href="MapView.dc.html" style="flex:none;display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:16px;background:#F7FAFB;border:1px solid #E3EBED;box-sizing:border-box">
+        <span style="flex:none;width:34px;height:34px;border-radius:17px;background:#E8F1FD;display:flex;align-items:center;justify-content:center;color:#1565D8">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:13.5px;font-weight:800">Spain</span>
+          <span style="font-size:11.5px;font-weight:600;color:#5C6B70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Barcelona · Seville</span>
+        </span>
+        <span style="flex:none;font-size:11.5px;font-weight:800;color:#1565D8">14 posts</span>
+      </a>
+      <a href="MapView.dc.html" style="flex:none;display:flex;align-items:center;justify-content:center;padding:11px;border-radius:16px;border:1.5px dashed #D5E0E3;font-size:12.5px;font-weight:800;color:#1565D8;box-sizing:border-box">+8 more countries</a>
+    </div>
+  </sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { following: false };
+    this.state = { following: false, messaged: false, tab: 'posts', stat: '' };
   }
   renderVals() {
     const f = this.state.following;
+    const m = this.state.messaged;
+    const onPosts = this.state.tab === 'posts';
+    const stat = this.state.stat;
+    const activeTab = 'border-bottom:2px solid #1565D8;color:#1565D8';
+    const idleTab = 'border-bottom:2px solid transparent;color:#8A979C';
+    const pickedStat = 'color:#1565D8';
+    const notes = {
+      posts: '128 posts · 34 of them from Istanbul',
+      followers: '2.4K followers · incl. @tahir.guliyev, @murad.trip',
+      following: 'Following 348 travellers · incl. @murad.trip'
+    };
     return {
-      followLabel: f ? 'Вы подписаны' : 'Подписаться',
+      followLabel: f ? 'Following' : 'Follow',
       followStyle: f
         ? 'background:#FFFFFF;color:#2E4B74;border:1.5px solid #D5E0E3'
         : 'background:#1565D8;color:#FFFFFF;border:1.5px solid #1565D8',
-      toggleFollow: () => this.setState({ following: !this.state.following })
+      toggleFollow: () => this.setState({ following: !this.state.following }),
+      messageLabel: m ? 'Message sent' : 'Message',
+      messageStyle: m
+        ? 'background:#EEF4FE;color:#1565D8'
+        : 'background:#FFFFFF;color:#16262B',
+      toggleMessage: () => this.setState({ messaged: !this.state.messaged }),
+      postsStatStyle: stat === 'posts' ? pickedStat : '',
+      followersStatStyle: stat === 'followers' ? pickedStat : '',
+      followingStatStyle: stat === 'following' ? pickedStat : '',
+      pickPosts: () => this.setState(
+        this.state.tab !== 'posts'
+          ? { tab: 'posts', stat: 'posts' }
+          : { stat: this.state.stat === 'posts' ? '' : 'posts' }
+      ),
+      pickFollowers: () => this.setState({ stat: this.state.stat === 'followers' ? '' : 'followers' }),
+      pickFollowing: () => this.setState({ stat: this.state.stat === 'following' ? '' : 'following' }),
+      showStatNote: !!notes[stat],
+      statNote: notes[stat] || '',
+      postsTabStyle: onPosts ? activeTab : idleTab,
+      mapTabStyle: onPosts ? idleTab : activeTab,
+      showPosts: () => this.setState({ tab: 'posts' }),
+      showMap: () => this.setState({ tab: 'map' }),
+      onPosts: onPosts,
+      onMap: !onPosts,
+      tileHref: 'Post.dc.html'
     };
   }
 }

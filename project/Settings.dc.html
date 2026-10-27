@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Настройки</title>
+<title>Settings</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,74 +17,84 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#F7FAFB;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;height:56px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#FFFFFF;border-bottom:1px solid #EDF2F3;box-sizing:border-box">
-    <a href="Profile.dc.html" aria-label="Назад" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="Profile.dc.html" aria-label="Back" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
     </a>
-    <span style="font-size:16.5px;font-weight:800">Настройки</span>
+    <span style="font-size:16.5px;font-weight:800">Settings</span>
   </div>
 
   <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:14px 16px;box-sizing:border-box">
 
     <div style="display:flex;flex-direction:column;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED">
-      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:13px 16px 4px">АККАУНТ</span>
-      <span style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F2F6F7">
+      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:13px 16px 4px">ACCOUNT</span>
+      <a href="EditProfile.dc.html" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F2F6F7;cursor:pointer;color:inherit">
         <span style="flex:1;display:flex;flex-direction:column;gap:1px">
-          <span style="font-size:14px;font-weight:700">Эл. почта</span>
-          <span style="font-size:12px;color:#5C6B70;font-weight:600">tahir@example.com · подтверждена</span>
+          <span style="font-size:14px;font-weight:700">Email</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600">tahir@example.com · verified</span>
         </span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-      </span>
-      <span style="display:flex;align-items:center;gap:12px;padding:12px 16px">
-        <span style="flex:1;font-size:14px;font-weight:700">Сменить пароль</span>
+      </a>
+      <a href="Forgot.dc.html" style="display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;color:inherit">
+        <span style="flex:1;font-size:14px;font-weight:700">Change password</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-      </span>
+      </a>
     </div>
 
     <div style="display:flex;flex-direction:column;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED">
-      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:13px 16px 4px">УВЕДОМЛЕНИЯ</span>
+      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:13px 16px 4px">NOTIFICATIONS</span>
       <span style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F2F6F7">
-        <span style="flex:1;font-size:14px;font-weight:700">Пуш-уведомления</span>
-        <button onClick="{{togglePush}}" aria-label="Пуш-уведомления" style="flex:none;width:46px;height:27px;border:none;border-radius:14px;cursor:pointer;position:relative;transition:background .15s;{{pushBg}}">
+        <span style="flex:1;font-size:14px;font-weight:700">Push notifications</span>
+        <button onClick="{{togglePush}}" aria-label="Push notifications" style="flex:none;width:46px;height:27px;border:none;border-radius:14px;cursor:pointer;position:relative;transition:background .15s;{{pushBg}}">
           <span style="position:absolute;top:3px;width:21px;height:21px;border-radius:11px;background:#FFFFFF;box-shadow:0 1px 3px rgba(13,30,60,0.25);transition:left .15s;{{pushKnob}}"></span>
         </button>
       </span>
       <span style="display:flex;align-items:center;gap:12px;padding:12px 16px">
         <span style="flex:1;display:flex;flex-direction:column;gap:1px">
-          <span style="font-size:14px;font-weight:700">Почтовая рассылка</span>
-          <span style="font-size:12px;color:#5C6B70;font-weight:600">Подборки направлений и скидки на отели</span>
+          <span style="font-size:14px;font-weight:700">Email digest</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600">Destination picks and hotel deals</span>
         </span>
-        <button onClick="{{toggleMail}}" aria-label="Почтовая рассылка" style="flex:none;width:46px;height:27px;border:none;border-radius:14px;cursor:pointer;position:relative;transition:background .15s;{{mailBg}}">
+        <button onClick="{{toggleMail}}" aria-label="Email digest" style="flex:none;width:46px;height:27px;border:none;border-radius:14px;cursor:pointer;position:relative;transition:background .15s;{{mailBg}}">
           <span style="position:absolute;top:3px;width:21px;height:21px;border-radius:11px;background:#FFFFFF;box-shadow:0 1px 3px rgba(13,30,60,0.25);transition:left .15s;{{mailKnob}}"></span>
         </button>
       </span>
     </div>
 
     <div style="display:flex;flex-direction:column;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED">
-      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:13px 16px 4px">ПРИЛОЖЕНИЕ</span>
-      <span style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F2F6F7">
-        <span style="flex:1;font-size:14px;font-weight:700">Язык</span>
-        <span style="font-size:13px;font-weight:700;color:#5C6B70">Русский</span>
+      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:13px 16px 4px">APP</span>
+      <button onClick="{{cycleLang}}" aria-label="Language" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:none;border-bottom:1px solid #F2F6F7;background:transparent;-webkit-appearance:none;appearance:none;font-family:inherit;color:inherit;text-align:left;cursor:pointer;box-sizing:border-box;width:100%">
+        <span style="flex:1;font-size:14px;font-weight:700">Language</span>
+        <span style="font-size:13px;font-weight:700;color:#5C6B70">{{lang}}</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-      </span>
-      <span style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #F2F6F7">
-        <span style="flex:1;font-size:14px;font-weight:700">Валюта</span>
-        <span style="font-size:13px;font-weight:700;color:#5C6B70">EUR €</span>
+      </button>
+      <button onClick="{{cycleCur}}" aria-label="Currency" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:none;border-bottom:1px solid #F2F6F7;background:transparent;-webkit-appearance:none;appearance:none;font-family:inherit;color:inherit;text-align:left;cursor:pointer;box-sizing:border-box;width:100%">
+        <span style="flex:1;font-size:14px;font-weight:700">Currency</span>
+        <span style="font-size:13px;font-weight:700;color:#5C6B70">{{cur}}</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-      </span>
+      </button>
       <span style="display:flex;align-items:center;gap:12px;padding:12px 16px">
         <span style="flex:1;display:flex;flex-direction:column;gap:1px">
-          <span style="font-size:14px;font-weight:700">Приватный аккаунт</span>
-          <span style="font-size:12px;color:#5C6B70;font-weight:600">Посты видят только подписчики</span>
+          <span style="font-size:14px;font-weight:700">Private account</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600">Only followers can see your posts</span>
         </span>
-        <button onClick="{{togglePriv}}" aria-label="Приватный аккаунт" style="flex:none;width:46px;height:27px;border:none;border-radius:14px;cursor:pointer;position:relative;transition:background .15s;{{privBg}}">
+        <button onClick="{{togglePriv}}" aria-label="Private account" style="flex:none;width:46px;height:27px;border:none;border-radius:14px;cursor:pointer;position:relative;transition:background .15s;{{privBg}}">
           <span style="position:absolute;top:3px;width:21px;height:21px;border-radius:11px;background:#FFFFFF;box-shadow:0 1px 3px rgba(13,30,60,0.25);transition:left .15s;{{privKnob}}"></span>
         </button>
       </span>
     </div>
 
-    <a href="Auth.dc.html" style="display:flex;align-items:center;justify-content:center;padding:15px;border-radius:16px;background:#FFFFFF;border:1px solid #F3D4D4;color:#C2402A;font-size:14.5px;font-weight:800">Выйти из аккаунта</a>
+    <a href="Auth.dc.html" style="display:flex;align-items:center;justify-content:center;padding:15px;border-radius:16px;background:#FFFFFF;border:1px solid #F3D4D4;color:#C2402A;font-size:14.5px;font-weight:800">Log out</a>
 
-    <span style="font-size:11.5px;color:#8A979C;font-weight:600;text-align:center">Touristgram 1.0.0 (MVP) · Условия · Конфиденциальность</span>
+    <span style="font-size:11.5px;color:#8A979C;font-weight:600;text-align:center">touristgram 1.0.0 (MVP) · <button onClick="{{openTerms}}" style="background:none;border:none;padding:0;margin:0;-webkit-appearance:none;appearance:none;font-family:inherit;font-size:11.5px;font-weight:600;line-height:inherit;vertical-align:baseline;cursor:pointer;{{termsStyle}}">Terms</button> · <button onClick="{{openPrivacy}}" style="background:none;border:none;padding:0;margin:0;-webkit-appearance:none;appearance:none;font-family:inherit;font-size:11.5px;font-weight:600;line-height:inherit;vertical-align:baseline;cursor:pointer;{{privacyStyle}}">Privacy</button></span>
+
+    <sc-if value="{{legalOpen}}" hint-placeholder-val="">
+      <span style="flex:none;display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:14px;background:#FFFFFF;border:1px solid #E3EBED">
+        <span style="display:flex;align-items:center;gap:8px">
+          <span style="flex:1;font-size:12.5px;font-weight:800">{{legalTitle}}</span>
+          <button onClick="{{closeLegal}}" style="flex:none;background:none;border:none;padding:0;margin:0;-webkit-appearance:none;appearance:none;font-family:inherit;font-size:11.5px;font-weight:800;color:#1565D8;cursor:pointer">Close</button>
+        </span>
+        <span style="font-size:11.5px;color:#5C6B70;font-weight:600;line-height:1.5">{{legalText}}</span>
+      </span>
+    </sc-if>
   </div>
 </div>
 </x-dc>
@@ -92,21 +102,49 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { push: true, mail: false, priv: false };
+    this.state = { push: true, mail: false, priv: false, langIdx: 0, curIdx: 0, legal: null };
   }
   renderVals() {
     const t = (on) => ({
       bg: on ? 'background:#1565D8' : 'background:#D5E0E3',
       knob: on ? 'left:22px' : 'left:3px'
     });
+    const langs = ['English', 'Turkish', 'German'];
+    const curs = ['EUR (€)', 'USD ($)', 'GBP (£)'];
     const p = t(this.state.push), m = t(this.state.mail), v = t(this.state.priv);
+    const legalOn = 'color:#0F4FAD;text-decoration:underline';
+    const legalOff = 'color:#1565D8;text-decoration:none';
+    const legalCopy = {
+      terms: {
+        title: 'Terms of Service',
+        text: 'Post your own photos, be kind to other travelers, and show up for the stays you book.'
+      },
+      privacy: {
+        title: 'Privacy Policy',
+        text: 'Your trips and bookings stay private. We never sell your data.'
+      }
+    };
+    const legal = this.state.legal;
+    const openLegal = (doc) => () => this.setState({ legal: this.state.legal === doc ? null : doc });
     return {
+      openTerms: openLegal('terms'),
+      openPrivacy: openLegal('privacy'),
+      closeLegal: () => this.setState({ legal: null }),
+      termsStyle: legal === 'terms' ? legalOn : legalOff,
+      privacyStyle: legal === 'privacy' ? legalOn : legalOff,
+      legalOpen: legal !== null,
+      legalTitle: legal ? legalCopy[legal].title : '',
+      legalText: legal ? legalCopy[legal].text : '',
       pushBg: p.bg, pushKnob: p.knob,
       mailBg: m.bg, mailKnob: m.knob,
       privBg: v.bg, privKnob: v.knob,
+      lang: langs[this.state.langIdx % langs.length],
+      cur: curs[this.state.curIdx % curs.length],
       togglePush: () => this.setState({ push: !this.state.push }),
       toggleMail: () => this.setState({ mail: !this.state.mail }),
-      togglePriv: () => this.setState({ priv: !this.state.priv })
+      togglePriv: () => this.setState({ priv: !this.state.priv }),
+      cycleLang: () => this.setState({ langIdx: (this.state.langIdx + 1) % langs.length }),
+      cycleCur: () => this.setState({ curIdx: (this.state.curIdx + 1) % curs.length })
     };
   }
 }

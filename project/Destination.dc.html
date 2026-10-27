@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Направление — Стамбул</title>
+<title>Destination — Istanbul</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,70 +17,80 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;position:relative;height:250px;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover;display:flex;align-items:flex-end;padding:18px;box-sizing:border-box">
-    <a href="Explore.dc.html" aria-label="Назад" style="position:absolute;top:14px;left:12px;width:40px;height:40px;border-radius:20px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="MapView.dc.html" aria-label="Istanbul on the map" style="position:absolute;top:0;left:0;width:390px;height:250px;background:transparent"></a>
+    <a href="Explore.dc.html" aria-label="Back" style="position:absolute;top:14px;left:12px;width:40px;height:40px;border-radius:20px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
     </a>
-    <span style="position:absolute;top:14px;right:12px;width:40px;height:40px;border-radius:20px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;color:#16262B">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
-    </span>
+    <button onClick="{{toggleSave}}" aria-label="Save destination" style="position:absolute;top:14px;right:12px;width:40px;height:40px;border:none;border-radius:20px;background:rgba(255,255,255,0.92);cursor:pointer;display:flex;align-items:center;justify-content:center;color:{{saveColor}}">
+      <sc-if value="{{saved}}" hint-placeholder-val="">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+      </sc-if>
+      <sc-if value="{{notSaved}}" hint-placeholder-val="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+      </sc-if>
+    </button>
+    <a href="Hotel.dc.html" style="position:absolute;right:16px;bottom:18px;display:flex;align-items:center;gap:6px;padding:9px 12px;border-radius:16px;background:#FFFFFF;color:#0D47A8;font-size:12.5px;font-weight:800;box-shadow:0 2px 12px rgba(13,30,60,0.38)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18V7"/><path d="M3 13h13a5 5 0 0 1 5 5v0"/><path d="M21 18v2"/><circle cx="7.5" cy="9.5" r="1.8"/></svg>
+      Hotels from €54
+    </a>
     <div style="display:flex;flex-direction:column;gap:4px;color:#FFFFFF;text-shadow:0 1px 12px rgba(13,30,60,0.65)">
-      <span style="font-size:30px;font-weight:800;letter-spacing:-0.5px">Стамбул</span>
-      <span style="font-size:13.5px;font-weight:700">Турция · Босфор и старый город</span>
+      <span style="font-size:30px;font-weight:800;letter-spacing:-0.5px">Istanbul</span>
+      <span style="font-size:13.5px;font-weight:700">Turkey · Bosphorus, Old City</span>
     </div>
   </div>
 
-  <div style="flex:none;display:flex;gap:10px;padding:14px 16px;border-bottom:1px solid #EDF2F3">
-    <span style="flex:1;display:flex;flex-direction:column;gap:2px;align-items:center;padding:10px;border-radius:14px;background:#F2F6F7">
-      <span style="font-size:16px;font-weight:800">186</span><span style="font-size:11px;font-weight:700;color:#5C6B70">мест</span>
-    </span>
-    <span style="flex:1;display:flex;flex-direction:column;gap:2px;align-items:center;padding:10px;border-radius:14px;background:#F2F6F7">
-      <span style="font-size:16px;font-weight:800">4 820</span><span style="font-size:11px;font-weight:700;color:#5C6B70">постов</span>
-    </span>
-    <span style="flex:1;display:flex;flex-direction:column;gap:2px;align-items:center;padding:10px;border-radius:14px;background:#F2F6F7">
-      <span style="font-size:16px;font-weight:800">+18°</span><span style="font-size:11px;font-weight:700;color:#5C6B70">сейчас</span>
-    </span>
+  <div style="flex:none;display:flex;gap:10px;padding:12px 16px;border-bottom:1px solid #EDF2F3">
+    <a href="MapView.dc.html" style="flex:1;display:flex;flex-direction:column;gap:2px;align-items:center;padding:10px;border-radius:14px;background:#F2F6F7">
+      <span style="font-size:16px;font-weight:800">186</span><span style="font-size:11px;font-weight:700;color:#5C6B70">places</span>
+    </a>
+    <a href="Explore.dc.html" style="flex:1;display:flex;flex-direction:column;gap:2px;align-items:center;padding:10px;border-radius:14px;background:#F2F6F7">
+      <span style="font-size:16px;font-weight:800">4,820</span><span style="font-size:11px;font-weight:700;color:#5C6B70">posts</span>
+    </a>
+    <button onClick="{{toggleUnits}}" style="flex:1;box-sizing:content-box;display:flex;flex-direction:column;gap:2px;align-items:center;padding:10px;border:none;border-radius:14px;background:#F2F6F7;cursor:pointer;font-family:inherit;color:#16262B">
+      <span style="font-size:16px;font-weight:800">{{temp}}</span><span style="font-size:11px;font-weight:700;color:#5C6B70">now</span>
+    </button>
   </div>
 
-  <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:16px;gap:18px;box-sizing:border-box">
+  <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:16px 16px 12px;gap:12px;box-sizing:border-box">
 
     <a href="AI.dc.html" style="display:flex;align-items:center;gap:12px;padding:15px 16px;border-radius:16px;background:#1565D8;color:#FFFFFF">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" stroke="none" aria-hidden="true"><path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6-5.6-1.9 5.6-1.9z"/><path d="M19 14.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"/></svg>
       <span style="flex:1;display:flex;flex-direction:column;gap:1px">
-        <span style="font-size:14.5px;font-weight:800">Спланировать поездку с AI</span>
-        <span style="font-size:12px;font-weight:600;color:#BBD7F7">Маршрут под ваши даты и интересы</span>
+        <span style="font-size:14.5px;font-weight:800">Plan this trip with AI</span>
+        <span style="font-size:12px;font-weight:600;color:#BBD7F7">Built around your dates and interests</span>
       </span>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
     </a>
 
     <div style="display:flex;flex-direction:column;gap:4px">
-      <span style="font-size:17px;font-weight:800;padding-bottom:8px">Обязательно к посещению</span>
-      <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #EDF2F3">
+      <span style="font-size:17px;font-weight:800;padding-bottom:6px">Must-see places</span>
+      <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #EDF2F3">
         <span style="flex:none;width:56px;height:56px;border-radius:14px;background:url('../blob/b6ea639ab08578ff5eb49288041389df') center/cover"></span>
         <span style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
-          <span style="font-size:14.5px;font-weight:700">Голубая мечеть</span>
-          <span style="font-size:12px;color:#5C6B70;font-weight:600">Султанахмет · бесплатно</span>
+          <span style="font-size:14.5px;font-weight:700">Blue Mosque</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600">Sultanahmet · free</span>
         </span>
         <span style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:800">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
           4.8
         </span>
       </a>
-      <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #EDF2F3">
+      <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #EDF2F3">
         <span style="flex:none;width:56px;height:56px;border-radius:14px;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover"></span>
         <span style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
-          <span style="font-size:14.5px;font-weight:700">Галатская башня</span>
-          <span style="font-size:12px;color:#5C6B70;font-weight:600">Бейоглу · смотровая площадка</span>
+          <span style="font-size:14.5px;font-weight:700">Galata Tower</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600">Beyoglu · viewpoint</span>
         </span>
         <span style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:800">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
           4.7
         </span>
       </a>
-      <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0">
+      <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:8px 0">
         <span style="flex:none;width:56px;height:56px;border-radius:14px;background:url('../blob/ad0278bb095880daacb821bbdb0247ff') center/cover"></span>
         <span style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
-          <span style="font-size:14.5px;font-weight:700">Гранд-базар</span>
-          <span style="font-size:12px;color:#5C6B70;font-weight:600">Фатих · закрыт в воскресенье</span>
+          <span style="font-size:14.5px;font-weight:700">Grand Bazaar</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600">Fatih · closed Sundays</span>
         </span>
         <span style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:800">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
@@ -91,14 +101,14 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 
     <div style="display:flex;flex-direction:column;gap:10px">
       <div style="display:flex;align-items:center;justify-content:space-between">
-        <span style="font-size:17px;font-weight:800">Посты путешественников</span>
-        <span style="font-size:12.5px;font-weight:700;color:#1565D8">Все</span>
+        <span style="font-size:17px;font-weight:800">Posts from travelers</span>
+        <a href="Explore.dc.html" style="font-size:12.5px;font-weight:700;color:#1565D8">See all</a>
       </div>
       <div style="display:flex;gap:10px">
-        <a href="Post.dc.html" style="flex:1;height:110px;border-radius:14px;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover;display:flex;align-items:flex-end;padding:10px;box-sizing:border-box">
+        <a href="Post.dc.html" style="flex:1;height:94px;border-radius:14px;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover;display:flex;align-items:flex-end;padding:10px;box-sizing:border-box">
           <span style="font-size:11px;font-weight:800;color:#FFFFFF;text-shadow:0 1px 8px rgba(13,30,60,0.8)">@aysel_k · 214 ♥</span>
         </a>
-        <a href="Post.dc.html" style="flex:1;height:110px;border-radius:14px;background:url('../blob/6aa376d4f9a4ee9f4b7a33ac9e7dff12') center/cover;display:flex;align-items:flex-end;padding:10px;box-sizing:border-box">
+        <a href="Post.dc.html" style="flex:1;height:94px;border-radius:14px;background:url('../blob/6aa376d4f9a4ee9f4b7a33ac9e7dff12') center/cover;display:flex;align-items:flex-end;padding:10px;box-sizing:border-box">
           <span style="font-size:11px;font-weight:800;color:#FFFFFF;text-shadow:0 1px 8px rgba(13,30,60,0.8)">@murad.trip · 97 ♥</span>
         </a>
       </div>
@@ -108,7 +118,21 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    this.state = { saved: false, fahrenheit: false };
+  }
+  renderVals() {
+    const saved = this.state.saved;
+    return {
+      saved: saved,
+      notSaved: !saved,
+      saveColor: saved ? '#1565D8' : '#16262B',
+      temp: this.state.fahrenheit ? '+64°' : '+18°',
+      toggleSave: () => this.setState({ saved: !this.state.saved }),
+      toggleUnits: () => this.setState({ fahrenheit: !this.state.fahrenheit })
+    };
+  }
 }
 </script>
 </body>

@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Результаты поиска</title>
+<title>Search results · touristgram</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -18,34 +18,72 @@ input::placeholder{color:#8A979C}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #EDF2F3">
-    <a href="Explore.dc.html" aria-label="Назад" style="flex:none;width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="Explore.dc.html" aria-label="Back" style="flex:none;width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
     </a>
-    <span style="flex:1;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;background:#F2F6F7">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C6B70" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
-      <span style="flex:1;font-size:14.5px;font-weight:700">Стамбул</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    <span style="flex:1;display:flex;align-items:center;gap:10px;padding:10.5px 12.5px;border-radius:16px;box-sizing:border-box;{{fieldStyle}}">
+      <button onClick="{{focusField}}" aria-label="Edit search" style="flex:1;display:flex;align-items:center;gap:10px;min-width:0;background:none;border:none;padding:0;margin:0;cursor:pointer;font-family:inherit;text-align:left;color:inherit">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C6B70" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex:none"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        <span style="flex:1;font-size:14.5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;{{queryStyle}}">{{queryText}}</span>
+      </button>
+      <button onClick="{{clearQuery}}" aria-label="Clear search" style="flex:none;display:flex;align-items:center;justify-content:center;background:none;border:none;padding:0;margin:0;cursor:pointer;font-family:inherit;color:#8A979C">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
     </span>
   </div>
 
   <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:4px 16px 0;box-sizing:border-box">
 
-    <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:12px 0 6px">НАПРАВЛЕНИЯ</span>
+    <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:12px 0 6px">DESTINATIONS</span>
     <a href="Destination.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F2F6F7">
       <span style="flex:none;width:52px;height:52px;border-radius:12px;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover"></span>
       <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
-        <span style="font-size:14.5px;font-weight:800">Стамбул</span>
-        <span style="font-size:12px;color:#5C6B70;font-weight:600">Турция · 186 мест · 4 820 постов</span>
+        <span style="font-size:14.5px;font-weight:800">Istanbul</span>
+        <span style="font-size:12px;color:#5C6B70;font-weight:600">Turkey · 186 places · 4,820 posts</span>
       </span>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
     </a>
 
-    <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:14px 0 6px">МЕСТА В СТАМБУЛЕ</span>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0 6px">
+      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px">HOTELS IN ISTANBUL</span>
+      <a href="Hotel.dc.html" style="font-size:12px;font-weight:800;color:#1565D8">See all</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 11px;border-radius:16px;border:1.5px solid #AFCDF5;background:#F7FBFF;box-sizing:border-box">
+      <a href="Hotel.dc.html" style="flex:1;display:flex;align-items:center;gap:11px;min-width:0">
+        <span style="flex:none;width:52px;height:52px;border-radius:12px;background:url('../blob/80a50291100298cfa2d812d95da27e2a') center/cover"></span>
+        <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+          <span style="font-size:14px;font-weight:800">Sirkeci Mansion</span>
+          <span style="display:flex;align-items:center;gap:4px;font-size:11.5px;color:#5C6B70;font-weight:600;white-space:nowrap">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true" style="flex:none"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
+            4.8 · breakfast included
+          </span>
+          <span style="font-size:13.5px;font-weight:800;color:#0D47A8">€120 <span style="font-size:11px;color:#5C6B70;font-weight:700">/ night</span></span>
+        </span>
+      </a>
+      <a href="Booking.dc.html" style="flex:none;padding:10px 15px;border-radius:12px;background:#1565D8;color:#FFFFFF;font-size:12.5px;font-weight:800">Book</a>
+    </div>
+
+    <a href="Hotel.dc.html" style="display:flex;align-items:center;gap:11px;padding:10px 0 2px">
+      <span style="flex:none;width:38px;height:38px;border-radius:11px;background:#F2F6F7;display:flex;align-items:center;justify-content:center;color:#1565D8">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19v-9"/><path d="M3 13.5h12.5a5.5 5.5 0 0 1 5.5 5.5"/><path d="M21 19v1.5"/><path d="M3 20.5V19"/><circle cx="7.3" cy="10.3" r="1.5"/></svg>
+      </span>
+      <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+        <span style="font-size:13.5px;font-weight:700">Hotel Amira Istanbul</span>
+        <span style="font-size:11.5px;color:#5C6B70;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">Sultanahmet · rooftop terrace</span>
+      </span>
+      <span style="flex:none;font-size:13px;font-weight:800;color:#16262B">€138 <span style="font-size:11px;color:#5C6B70;font-weight:700">/ night</span></span>
+    </a>
+
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 0 6px">
+      <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px">PLACES IN ISTANBUL</span>
+      <a href="MapView.dc.html" style="font-size:12px;font-weight:800;color:#1565D8">View map</a>
+    </div>
     <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F2F6F7">
       <span style="flex:none;width:52px;height:52px;border-radius:12px;background:url('../blob/b6ea639ab08578ff5eb49288041389df') center/cover"></span>
       <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
-        <span style="font-size:14px;font-weight:700">Голубая мечеть</span>
-        <span style="font-size:12px;color:#5C6B70;font-weight:600">Достопримечательность · Султанахмет</span>
+        <span style="font-size:14px;font-weight:700">Blue Mosque</span>
+        <span style="font-size:12px;color:#5C6B70;font-weight:600">Landmark · Sultanahmet</span>
       </span>
       <span style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:800">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
@@ -55,8 +93,8 @@ input::placeholder{color:#8A979C}
     <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F2F6F7">
       <span style="flex:none;width:52px;height:52px;border-radius:12px;background:url('../blob/9c450275697208c51854706d2df00ece') center/cover"></span>
       <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
-        <span style="font-size:14px;font-weight:700">Галатская башня</span>
-        <span style="font-size:12px;color:#5C6B70;font-weight:600">Смотровая площадка · Бейоглу</span>
+        <span style="font-size:14px;font-weight:700">Galata Tower</span>
+        <span style="font-size:12px;color:#5C6B70;font-weight:600">Viewpoint · Beyoglu</span>
       </span>
       <span style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:800">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
@@ -66,8 +104,8 @@ input::placeholder{color:#8A979C}
     <a href="Place.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F2F6F7">
       <span style="flex:none;width:52px;height:52px;border-radius:12px;background:url('../blob/ad0278bb095880daacb821bbdb0247ff') center/cover"></span>
       <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
-        <span style="font-size:14px;font-weight:700">Гранд-базар</span>
-        <span style="font-size:12px;color:#5C6B70;font-weight:600">Рынок · Фатих</span>
+        <span style="font-size:14px;font-weight:700">Grand Bazaar</span>
+        <span style="font-size:12px;color:#5C6B70;font-weight:600">Market · Fatih</span>
       </span>
       <span style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:800">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="#E8A13A" stroke="none" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.5l-5.9 3.2 1.2-6.6L2.5 9.5l6.6-.9z"/></svg>
@@ -75,27 +113,63 @@ input::placeholder{color:#8A979C}
       </span>
     </a>
 
-    <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:14px 0 6px">ПУТЕШЕСТВЕННИКИ</span>
-    <a href="UserProfile.dc.html" style="display:flex;align-items:center;gap:12px;padding:10px 0">
-      <img src="../blob/286253317834a930566f50e2a20d570d" alt="" style="flex:none;width:46px;height:46px;border-radius:50%;object-fit:cover">
-      <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
-        <span style="font-size:14px;font-weight:700">Айсель К.</span>
-        <span style="font-size:12px;color:#5C6B70;font-weight:600">@aysel_k · 34 поста о Стамбуле</span>
-      </span>
-      <span style="flex:none;padding:9px 14px;border-radius:12px;border:1.5px solid #1565D8;color:#1565D8;font-size:12px;font-weight:800;box-sizing:border-box">Подписаться</span>
-    </a>
+    <span style="font-size:12px;font-weight:800;color:#8A979C;letter-spacing:0.4px;padding:14px 0 6px">TRAVELERS</span>
+    <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+      <a href="UserProfile.dc.html" style="flex:1;display:flex;align-items:center;gap:12px;min-width:0">
+        <img src="../blob/286253317834a930566f50e2a20d570d" alt="Aysel K." style="flex:none;width:46px;height:46px;border-radius:50%;object-fit:cover">
+        <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+          <span style="font-size:14px;font-weight:700">Aysel K.</span>
+          <span style="font-size:12px;color:#5C6B70;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">@aysel_k · 34 posts from Istanbul</span>
+        </span>
+      </a>
+      <button onClick="{{toggleFollow}}" style="flex:none;padding:9px 14px;border-radius:12px;font-family:inherit;font-size:12px;font-weight:800;cursor:pointer;box-sizing:border-box;{{followStyle}}">{{followLabel}}</button>
+    </div>
 
-    <div style="margin-top:10px;padding:13px 14px;border-radius:14px;background:#E8F1FD;display:flex;align-items:center;gap:10px">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#1565D8" stroke="none" aria-hidden="true" style="flex:none"><path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6-5.6-1.9 5.6-1.9z"/><path d="M19 14.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"/></svg>
-      <span style="flex:1;font-size:12.5px;font-weight:700;color:#0D47A8">Спросите AI: «Что посмотреть в Стамбуле за 3 дня?»</span>
-      <a href="AI.dc.html" style="flex:none;font-size:12.5px;font-weight:800;color:#1565D8">Спросить</a>
+    <div style="margin-top:10px;padding:11px 12px;border-radius:16px;background:#E8F1FD;display:flex;align-items:center;gap:10px;box-sizing:border-box">
+      <a href="AI.dc.html" style="flex:1;display:flex;align-items:center;gap:10px;min-width:0">
+        <span style="flex:none;width:34px;height:34px;border-radius:17px;background:#1565D8;display:flex;align-items:center;justify-content:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" stroke="none" aria-hidden="true"><path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6-5.6-1.9 5.6-1.9z"/><path d="M19 14.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"/></svg>
+        </span>
+        <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+          <span style="font-size:12.5px;font-weight:800;color:#0D47A8">Ask the AI assistant</span>
+          <span style="font-size:11.5px;font-weight:600;color:#2E4B74;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">“What to see in Istanbul in 3 days?”</span>
+        </span>
+      </a>
+      <a href="AI.dc.html" style="flex:none;padding:9px 14px;border-radius:12px;background:#1565D8;color:#FFFFFF;font-size:12.5px;font-weight:800">Ask</a>
     </div>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    this.state = { query: 'Istanbul', focused: false, following: false };
+  }
+  renderVals() {
+    const q = this.state.query;
+    const hasQuery = q.length > 0;
+    return {
+      queryText: hasQuery ? q : 'Search cities, hotels, people',
+      queryStyle: hasQuery
+        ? 'color:#16262B;font-weight:700'
+        : 'color:#8A979C;font-weight:600',
+      fieldStyle: this.state.focused
+        ? 'background:#FFFFFF;border:1.5px solid #1565D8'
+        : 'background:#F2F6F7;border:1.5px solid #F2F6F7',
+      focusField: () => this.setState({ focused: !this.state.focused }),
+      clearQuery: () => this.setState(
+        this.state.query
+          ? { query: '', focused: true }
+          : { query: 'Istanbul', focused: false }
+      ),
+      followLabel: this.state.following ? 'Following' : 'Follow',
+      followStyle: this.state.following
+        ? 'background:#F2F6F7;color:#2E4B74;border:1.5px solid #D5E0E3'
+        : 'background:#FFFFFF;color:#1565D8;border:1.5px solid #1565D8',
+      toggleFollow: () => this.setState({ following: !this.state.following })
+    };
+  }
 }
 </script>
 </body>

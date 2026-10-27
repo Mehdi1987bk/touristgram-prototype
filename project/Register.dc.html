@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Регистрация</title>
+<title>touristgram - create account</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,46 +17,75 @@ input::placeholder{color:#8A979C}
 </helmet>
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden;padding:24px 24px 32px">
 
-  <a href="Auth.dc.html" aria-label="Назад" style="width:40px;height:40px;margin-left:-8px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+  <a href="Auth.dc.html" aria-label="Back" style="width:40px;height:40px;margin-left:-8px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
   </a>
 
   <div style="margin-top:26px;display:flex;flex-direction:column;gap:8px">
-    <div style="font-size:28px;font-weight:800;letter-spacing:-0.4px">Создать аккаунт</div>
-    <div style="font-size:14.5px;color:#5C6B70;font-weight:500;line-height:1.5">Делитесь поездками и планируйте новые вместе с AI</div>
+    <div style="font-size:28px;font-weight:800;letter-spacing:-0.4px">Create account</div>
+    <div style="font-size:14.5px;color:#5C6B70;font-weight:500;line-height:1.5">Share your trips and plan new ones with AI</div>
   </div>
 
   <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px">
     <div style="display:flex;flex-direction:column;gap:7px">
-      <label for="name" style="font-size:12.5px;font-weight:700;color:#2E4B74">Имя</label>
-      <input id="name" type="text" placeholder="Как вас зовут?" style="box-sizing:border-box;width:100%;padding:14px 16px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:15px;color:#16262B;background:#FFFFFF">
+      <label for="name" style="font-size:12.5px;font-weight:700;color:#2E4B74">Name</label>
+      <input id="name" type="text" placeholder="What should we call you?" style="box-sizing:border-box;width:100%;padding:14px 16px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:15px;color:#16262B;background:#FFFFFF">
     </div>
     <div style="display:flex;flex-direction:column;gap:7px">
-      <label for="email" style="font-size:12.5px;font-weight:700;color:#2E4B74">Эл. почта</label>
+      <label for="email" style="font-size:12.5px;font-weight:700;color:#2E4B74">Email</label>
       <input id="email" type="email" placeholder="you@example.com" style="box-sizing:border-box;width:100%;padding:14px 16px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:15px;color:#16262B;background:#FFFFFF">
     </div>
     <div style="display:flex;flex-direction:column;gap:7px">
-      <label for="pass" style="font-size:12.5px;font-weight:700;color:#2E4B74">Пароль</label>
-      <input id="pass" type="password" placeholder="Минимум 8 символов" style="box-sizing:border-box;width:100%;padding:14px 16px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:15px;color:#16262B;background:#FFFFFF">
-      <span style="font-size:12px;font-weight:600;color:#8A979C">Буквы, цифры и хотя бы один специальный символ</span>
+      <label for="pass" style="font-size:12.5px;font-weight:700;color:#2E4B74">Password</label>
+      <input id="pass" type="password" placeholder="At least 8 characters" style="box-sizing:border-box;width:100%;padding:14px 16px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:15px;color:#16262B;background:#FFFFFF">
+      <span style="font-size:12px;font-weight:600;color:#8A979C">Letters, numbers and one special character</span>
     </div>
   </div>
 
-  <a href="Onboarding.dc.html" style="margin-top:24px;box-sizing:border-box;padding:16px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:16px;font-weight:800;text-align:center">Зарегистрироваться</a>
+  <a href="Onboarding.dc.html" style="margin-top:24px;box-sizing:border-box;padding:16px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:16px;font-weight:800;text-align:center">Sign up</a>
 
-  <div style="margin-top:14px;font-size:12px;font-weight:600;color:#8A979C;text-align:center;line-height:1.55">Нажимая «Зарегистрироваться», вы принимаете<br><span style="color:#1565D8;font-weight:700">Условия сервиса</span> и <span style="color:#1565D8;font-weight:700">Политику конфиденциальности</span></div>
+  <div style="margin-top:14px;font-size:12px;font-weight:600;color:#8A979C;text-align:center;line-height:1.55">By tapping Sign up you agree to our<br><button onClick="{{openTerms}}" style="background:none;border:none;padding:0;margin:0;font-family:inherit;font-size:12px;font-weight:700;line-height:inherit;vertical-align:baseline;cursor:pointer;{{termsStyle}}">Terms of Service</button> and <button onClick="{{openPrivacy}}" style="background:none;border:none;padding:0;margin:0;font-family:inherit;font-size:12px;font-weight:700;line-height:inherit;vertical-align:baseline;cursor:pointer;{{privacyStyle}}">Privacy Policy</button></div>
+
+  <sc-if value="{{legalOpen}}" hint-placeholder-val="">
+    <div style="margin-top:12px;padding:12px 14px;border-radius:12px;background:#F2F6FA;font-size:11.5px;font-weight:600;color:#5C6B70;line-height:1.55;text-align:center">{{legalText}}</div>
+  </sc-if>
 
   <div style="flex:1"></div>
 
   <div style="display:flex;justify-content:center;gap:6px;font-size:13.5px;font-weight:600;color:#5C6B70">
-    Уже есть аккаунт?
-    <a href="Auth.dc.html" style="color:#1565D8;font-weight:800">Войти</a>
+    Already have an account?
+    <a href="Auth.dc.html" style="color:#1565D8;font-weight:800">Sign in</a>
   </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    this.state = { legal: null };
+  }
+  renderVals() {
+    var self = this;
+    var open = function (doc) {
+      return function () {
+        self.setState({ legal: self.state.legal === doc ? null : doc });
+      };
+    };
+    var on = 'color:#0F4FAD;text-decoration:underline';
+    var off = 'color:#1565D8;text-decoration:none';
+    var copy = {
+      terms: 'Post your own photos, be kind to other travelers, and show up for the stays you book.',
+      privacy: 'Your trips and bookings stay private. We never sell your data.'
+    };
+    return {
+      openTerms: open('terms'),
+      openPrivacy: open('privacy'),
+      termsStyle: this.state.legal === 'terms' ? on : off,
+      privacyStyle: this.state.legal === 'privacy' ? on : off,
+      legalOpen: this.state.legal !== null,
+      legalText: this.state.legal ? copy[this.state.legal] : ''
+    };
+  }
 }
 </script>
 </body>

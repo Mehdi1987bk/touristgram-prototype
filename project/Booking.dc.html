@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Бронирование отеля</title>
+<title>Booking · touristgram</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,78 +17,83 @@ input::placeholder{color:#8A979C}
 </helmet>
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#F7FAFB;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
-  <sc-if value="{{showForm}}" hint-placeholder-val="{{true}}">
+  <sc-if value="{{showForm}}" hint-placeholder-val="true">
     <div style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 12px;background:#FFFFFF;border-bottom:1px solid #EDF2F3">
-      <a href="Hotel.dc.html" aria-label="Назад к отелям" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+      <a href="Hotel.dc.html" aria-label="Back to hotel" style="flex:none;width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
       </a>
-      <div style="flex:1;display:flex;flex-direction:column">
-        <span style="font-size:16px;font-weight:800">Бронирование</span>
-        <span style="font-size:11.5px;font-weight:600;color:#5C6B70">шаг 2 из 3 · проверка и оплата</span>
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+        <span style="font-size:16px;font-weight:800">Booking</span>
+        <span style="font-size:11.5px;font-weight:600;color:#5C6B70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">step 2 of 3 · review &amp; pay</span>
       </div>
-      <span style="padding:6px 11px;border-radius:14px;background:#FDEFE4;font-size:11.5px;font-weight:800;color:#B04A12">цена держится 14:32</span>
+      <button onClick="{{toggleHold}}" aria-label="About the held rate" style="flex:none;white-space:nowrap;padding:6px 11px;border:none;border-radius:14px;background:#FDEFE4;font-family:inherit;font-size:11.5px;font-weight:800;color:#B04A12;cursor:pointer">price held 14:32</button>
     </div>
 
     <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:14px 16px;box-sizing:border-box">
 
+      <sc-if value="{{showHoldNote}}" hint-placeholder-val="">
+        <span style="flex:none;display:block;padding:10px 12px;border-radius:12px;background:#FDEFE4;font-size:11.5px;font-weight:700;color:#B04A12;line-height:1.45">Your rate is held while you review. Nothing is charged until you tap Confirm and pay.</span>
+      </sc-if>
+
       <div style="display:flex;flex-direction:column;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED">
-        <span style="display:flex;gap:12px;padding:13px 14px;border-bottom:1px solid #EDF2F3">
+        <a href="Hotel.dc.html" style="display:flex;gap:12px;padding:13px 14px;border-bottom:1px solid #EDF2F3">
           <span style="flex:none;width:52px;height:52px;border-radius:12px;background:url('../blob/ceb7a8f77c69fddfeaa82fa0e76c51e2') center/cover"></span>
           <span style="flex:1;display:flex;flex-direction:column;gap:2px">
             <span style="font-size:14.5px;font-weight:800">Sirkeci Mansion</span>
-            <span style="font-size:12px;color:#5C6B70;font-weight:600">Делюкс с видом · 14–17 ноя · 3 ночи · 2 гостя</span>
+            <span style="font-size:12px;color:#5C6B70;font-weight:600">Deluxe with a view · Nov 14-17 · 2 guests</span>
           </span>
-        </span>
-        <span style="display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;border-bottom:1px solid #EDF2F3"><span style="color:#5C6B70;font-weight:600">3 ночи × 120 €</span><b>360 €</b></span>
-        <span style="display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;border-bottom:1px solid #EDF2F3"><span style="color:#5C6B70;font-weight:600">Налоги и сборы</span><b>29 €</b></span>
-        <span style="display:flex;justify-content:space-between;padding:12px 14px;font-size:15px"><b>Итого</b><b style="color:#0D47A8">389 €</b></span>
+        </a>
+        <span style="display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;border-bottom:1px solid #EDF2F3"><span style="color:#5C6B70;font-weight:600">3 nights × €120</span><b>€360</b></span>
+        <span style="display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;border-bottom:1px solid #EDF2F3"><span style="color:#5C6B70;font-weight:600">Taxes and fees</span><b>€29</b></span>
+        <span style="display:flex;justify-content:space-between;padding:12px 14px;font-size:15px"><b>Total</b><b style="color:#0D47A8">€389</b></span>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:10px">
-        <span style="font-size:14px;font-weight:800">Данные гостя</span>
+        <span style="font-size:14px;font-weight:800">Guest details</span>
         <div style="display:flex;flex-direction:column;gap:6px">
-          <label for="guest" style="font-size:12px;font-weight:700;color:#2E4B74">Имя и фамилия (как в паспорте)</label>
+          <label for="guest" style="font-size:12px;font-weight:700;color:#2E4B74">Full name (as on your passport)</label>
           <input id="guest" value="Tahir Guliyev" style="box-sizing:border-box;width:100%;padding:13px 15px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:14px;color:#16262B;background:#FFFFFF">
         </div>
         <div style="display:flex;flex-direction:column;gap:6px">
-          <label for="mail" style="font-size:12px;font-weight:700;color:#2E4B74">Эл. почта для подтверждения</label>
+          <label for="mail" style="font-size:12px;font-weight:700;color:#2E4B74">Confirmation email</label>
           <input id="mail" type="email" value="tahir@example.com" style="box-sizing:border-box;width:100%;padding:13px 15px;border:1.5px solid #D5E0E3;border-radius:14px;font-family:inherit;font-size:14px;color:#16262B;background:#FFFFFF">
         </div>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:10px">
-        <span style="font-size:14px;font-weight:800">Оплата</span>
-        <span style="display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:14px;background:#FFFFFF;border:1.5px solid #1565D8">
+        <span style="font-size:14px;font-weight:800">Payment</span>
+        <button onClick="{{switchPay}}" aria-label="Change payment method" style="display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:13px 15px;border-radius:14px;background:#FFFFFF;border:1.5px solid #1565D8;font-family:inherit;color:#16262B;text-align:left;cursor:pointer">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1565D8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg>
-          <span style="flex:1;font-size:13.5px;font-weight:700">Карта ····4242</span>
-          <span style="font-size:12px;font-weight:800;color:#1565D8">Изменить</span>
-        </span>
-        <span style="font-size:11px;color:#8A979C;font-weight:600;line-height:1.5">Бесплатная отмена до 11 ноября. Нажимая кнопку, вы соглашаетесь с условиями тарифа.</span>
+          <span style="flex:1;font-size:13.5px;font-weight:700">{{payLabel}}</span>
+          <span style="font-size:12px;font-weight:800;color:#1565D8">Change</span>
+        </button>
+        <span style="font-size:11px;color:#8A979C;font-weight:600;line-height:1.5">Free cancellation until Nov 11. By confirming, you accept the rate terms.</span>
       </div>
     </div>
 
     <div style="flex:none;padding:14px 16px 26px;background:#FFFFFF;border-top:1px solid #EDF2F3">
-      <button onClick="{{confirm}}" style="width:100%;box-sizing:border-box;padding:16px;border:none;border-radius:16px;background:#1565D8;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:800;cursor:pointer">Подтвердить и оплатить 389 €</button>
+      <button onClick="{{confirm}}" style="width:100%;box-sizing:border-box;padding:16px;border:none;border-radius:16px;background:#1565D8;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:800;cursor:pointer">Confirm and pay €389</button>
     </div>
   </sc-if>
 
-  <sc-if value="{{showDone}}" hint-placeholder-val="{{false}}">
+  <sc-if value="{{showDone}}" hint-placeholder-val="">
     <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:0 32px">
       <span style="width:88px;height:88px;border-radius:44px;background:#E5F3EA;display:flex;align-items:center;justify-content:center">
         <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 7"/></svg>
       </span>
       <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-        <span style="font-size:24px;font-weight:800;text-align:center">Бронь подтверждена</span>
-        <span style="font-size:14px;color:#5C6B70;font-weight:600;text-align:center;line-height:1.55">Sirkeci Mansion · 14–17 ноября<br>Номер брони <b style="color:#16262B">TG-58214</b><br>Ваучер отправлен на почту</span>
+        <span style="font-size:24px;font-weight:800;text-align:center">Booking confirmed</span>
+        <span style="font-size:14px;color:#5C6B70;font-weight:600;text-align:center;line-height:1.55">Sirkeci Mansion · Nov 14-17<br>Booking no. <b style="color:#16262B">TG-58214</b><br>Voucher sent to your email</span>
       </div>
       <div style="width:100%;display:flex;flex-direction:column;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED">
-        <span style="display:flex;justify-content:space-between;padding:12px 14px;font-size:13px;border-bottom:1px solid #EDF2F3"><span style="color:#5C6B70;font-weight:600">Оплачено</span><b>389 € · карта ····4242</b></span>
-        <span style="display:flex;justify-content:space-between;padding:12px 14px;font-size:13px"><span style="color:#5C6B70;font-weight:600">Отмена</span><b style="color:#2E7D4F">бесплатно до 11 ноября</b></span>
+        <span style="display:flex;justify-content:space-between;padding:12px 14px;font-size:13px;border-bottom:1px solid #EDF2F3"><span style="color:#5C6B70;font-weight:600">Paid</span><b>€389 · {{paidWith}}</b></span>
+        <span style="display:flex;justify-content:space-between;padding:12px 14px;font-size:13px"><span style="color:#5C6B70;font-weight:600">Cancellation</span><b style="color:#2E7D4F">free until Nov 11</b></span>
       </div>
+      <a href="Hotel.dc.html" style="font-size:13px;font-weight:800;color:#1565D8">View hotel details</a>
     </div>
     <div style="flex:none;display:flex;flex-direction:column;gap:12px;padding:14px 16px 26px">
-      <a href="Trips.dc.html" style="box-sizing:border-box;padding:16px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:15px;font-weight:800;text-align:center">Открыть мою поездку</a>
-      <a href="Main.dc.html" style="box-sizing:border-box;padding:14px;border-radius:16px;border:1.5px solid #D5E0E3;color:#2E4B74;font-size:14px;font-weight:800;text-align:center">На главную</a>
+      <a href="Trips.dc.html" style="box-sizing:border-box;padding:16px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:15px;font-weight:800;text-align:center">Open my trip</a>
+      <a href="Main.dc.html" style="box-sizing:border-box;padding:14px;border-radius:16px;border:1.5px solid #D5E0E3;color:#2E4B74;font-size:14px;font-weight:800;text-align:center">Back to home</a>
     </div>
   </sc-if>
 </div>
@@ -97,12 +102,18 @@ input::placeholder{color:#8A979C}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { done: false };
+    this.state = { done: false, pay: 0, holdNote: false };
   }
   renderVals() {
+    const methods = ['Card ····4242', 'Apple Pay', 'Card ····8319'];
     return {
       showForm: !this.state.done,
       showDone: this.state.done,
+      showHoldNote: this.state.holdNote,
+      payLabel: methods[this.state.pay],
+      paidWith: methods[this.state.pay],
+      toggleHold: () => this.setState({ holdNote: !this.state.holdNote }),
+      switchPay: () => this.setState({ pay: (this.state.pay + 1) % methods.length }),
       confirm: () => this.setState({ done: true })
     };
   }

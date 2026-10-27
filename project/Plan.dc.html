@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>План поездки</title>
+<title>Trip plan · touristgram</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,14 +17,14 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
 <div style="width:390px;height:844px;box-sizing:border-box;display:flex;flex-direction:column;background:#F7FAFB;font-family:'Manrope',system-ui,sans-serif;color:#16262B;overflow:hidden">
 
   <div style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 12px;background:#FFFFFF;border-bottom:1px solid #EDF2F3">
-    <a href="AI.dc.html" aria-label="Назад к ассистенту" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
+    <a href="AI.dc.html" aria-label="Back to the assistant" style="width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#16262B">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
     </a>
     <div style="flex:1;display:flex;flex-direction:column">
-      <span style="font-size:16px;font-weight:800">Стамбул · 3 дня</span>
-      <span style="font-size:11.5px;font-weight:600;color:#5C6B70">14–17 ноября · средний бюджет</span>
+      <span style="font-size:16px;font-weight:800">Istanbul · 3 days</span>
+      <span style="font-size:11.5px;font-weight:600;color:#5C6B70">Nov 14–17 · mid-range budget</span>
     </div>
-    <span style="padding:6px 11px;border-radius:14px;background:#E8F1FD;font-size:11.5px;font-weight:800;color:#0D47A8">версия 2</span>
+    <a href="AIHistory.dc.html" aria-label="Plan version history" style="padding:6px 11px;border-radius:14px;background:#E8F1FD;font-size:11.5px;font-weight:800;color:#0D47A8">Version 2</a>
   </div>
 
   <div style="flex:none;display:flex;gap:8px;padding:12px 16px 4px">
@@ -36,7 +36,7 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
   <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:10px;padding:12px 16px;box-sizing:border-box">
     <div style="font-size:13px;font-weight:800;color:#2E4B74">{{dayTitle}}</div>
     <sc-for list="{{items}}" as="it" hint-placeholder-count="4">
-      <div style="display:flex;gap:12px;padding:13px 14px;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED">
+      <a href="Place.dc.html" style="display:flex;gap:12px;padding:13px 14px;border-radius:16px;background:#FFFFFF;border:1px solid #E3EBED;cursor:pointer">
         <span style="flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;width:48px">
           <span style="font-size:13px;font-weight:800;color:#0D47A8">{{it.time}}</span>
           <span style="font-size:10px;font-weight:700;color:#8A979C">{{it.dur}}</span>
@@ -46,16 +46,16 @@ a{color:inherit;text-decoration:none}a:hover{color:inherit}
           <span style="font-size:14px;font-weight:800">{{it.title}}</span>
           <span style="font-size:12px;color:#5C6B70;font-weight:600;line-height:1.45">{{it.note}}</span>
         </span>
-      </div>
+      </a>
     </sc-for>
-    <a href="Place.dc.html" style="align-self:flex-start;font-size:12.5px;font-weight:800;color:#1565D8;padding:2px 2px">Открыть карточку места →</a>
-    <span style="font-size:11px;color:#8A979C;font-weight:600;line-height:1.5">Маршрут можно править вручную — правки сохранятся при перегенерации. Подтверждённые брони план не трогает.</span>
+    <a href="Place.dc.html" style="align-self:flex-start;font-size:12.5px;font-weight:800;color:#1565D8;padding:2px 2px">Open place details →</a>
+    <span style="font-size:11px;color:#8A979C;font-weight:600;line-height:1.5">Edit any step by hand — your changes are kept when the plan is regenerated. Confirmed bookings stay untouched.</span>
   </div>
 
   <div style="flex:none;display:flex;gap:12px;padding:14px 16px 26px;background:#FFFFFF;border-top:1px solid #EDF2F3">
-    <a href="Trips.dc.html" style="flex:1;display:flex;align-items:center;justify-content:center;padding:15px;border:1.5px solid #1565D8;border-radius:16px;font-size:14px;font-weight:800;color:#1565D8;box-sizing:border-box">Сохранить</a>
+    <a href="Trips.dc.html" style="flex:1;display:flex;align-items:center;justify-content:center;padding:15px;border:1.5px solid #1565D8;border-radius:16px;font-size:14px;font-weight:800;color:#1565D8;box-sizing:border-box">Save</a>
     <a href="Hotel.dc.html" style="flex:1.5;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:16px;background:#1565D8;color:#FFFFFF;font-size:14px;font-weight:800;box-sizing:border-box">
-      Отель на эти даты
+      Book a hotel
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
     </a>
   </div>
@@ -68,37 +68,37 @@ class Component extends DCLogic {
     this.state = { day: 0 };
     this.days = [
       {
-        title: 'День 1 · 14 ноября · Султанахмет',
+        title: 'Day 1 · Nov 14 · Sultanahmet',
         items: [
-          { time: '09:00', dur: '1,5 ч', title: 'Голубая мечеть', note: 'Бесплатно. Закрытая одежда, платки выдают на входе.' },
-          { time: '11:00', dur: '2 ч', title: 'Собор Святой Софии', note: 'Билет онлайн заранее — очередь в кассы до часа.' },
-          { time: '13:30', dur: '1 ч', title: 'Обед · кёфте у Султанахмета', note: 'Средний чек 12–15 €. Из постов: @murad.trip советует Tarihi Köftecisi.' },
-          { time: '15:00', dur: '2 ч', title: 'Цистерна Базилика и прогулка', note: 'Прохладно внутри — возьмите кофту.' }
+          { time: '09:00', dur: '1.5 h', title: 'Blue Mosque', note: 'Free. Cover up — scarves are handed out at the door.' },
+          { time: '11:00', dur: '2 h', title: 'Hagia Sophia', note: 'Book online ahead — the ticket queue can run an hour.' },
+          { time: '13:30', dur: '1 h', title: 'Lunch · Sultanahmet kofte', note: 'About €12–15 a head. From the feed: @murad.trip rates Tarihi Köftecisi.' },
+          { time: '15:00', dur: '2 h', title: 'Basilica Cistern', note: 'Cool inside, then a walk around the Old City — bring a layer.' }
         ]
       },
       {
-        title: 'День 2 · 15 ноября · Бейоглу и Босфор',
+        title: 'Day 2 · Nov 15 · Beyoglu and the Bosphorus',
         items: [
-          { time: '10:00', dur: '1,5 ч', title: 'Галатская башня', note: 'Лучший свет для фото — ближе к закату, но утром меньше людей.' },
-          { time: '12:00', dur: '2 ч', title: 'Истикляль и Таксим', note: 'Ретро-трамвай, кафе, магазины.' },
-          { time: '15:00', dur: '1,5 ч', title: 'Круиз по Босфору', note: 'Короткий маршрут от Эминёню, ~10 €.' },
-          { time: '19:00', dur: '2 ч', title: 'Ужин с видом на Босфор', note: 'Районы Ортакёй или Каракёй — бронь столика желательна.' }
+          { time: '10:00', dur: '1.5 h', title: 'Galata Tower', note: 'Best light for photos near sunset, but mornings are quieter.' },
+          { time: '12:00', dur: '2 h', title: 'Istiklal and Taksim', note: 'Retro tram, cafes and shops along the way.' },
+          { time: '15:00', dur: '1.5 h', title: 'Bosphorus cruise', note: 'Short route from Eminonu, around €10.' },
+          { time: '19:00', dur: '2 h', title: 'Dinner by the Bosphorus', note: 'Ortakoy or Karakoy — worth booking a table.' }
         ]
       },
       {
-        title: 'День 3 · 16 ноября · базары и вкусы',
+        title: 'Day 3 · Nov 16 · bazaars and street food',
         items: [
-          { time: '09:30', dur: '2 ч', title: 'Гранд-базар', note: 'Закрыт в воскресенье — поэтому поставлен на субботу.' },
-          { time: '12:00', dur: '1,5 ч', title: 'Египетский базар и специи', note: 'Рядом набережная Эминёню — балык-экмек на обед.' },
-          { time: '14:30', dur: '2 ч', title: 'Кулинарная прогулка по Кадыкёю', note: 'Азиатская сторона: паром 20 минут, по пути — виды города.' },
-          { time: '18:00', dur: '1 ч', title: 'Кофе и десерты · Караköй', note: 'Пахлава в Karaköy Güllüoğlu — классика.' }
+          { time: '09:30', dur: '2 h', title: 'Grand Bazaar', note: 'Closed on Sundays, so it is planned for a weekday.' },
+          { time: '12:00', dur: '1.5 h', title: 'Spice Bazaar', note: 'The Eminonu waterfront is next door — balik ekmek for lunch.' },
+          { time: '14:30', dur: '2 h', title: 'Food walk in Kadikoy', note: 'Asian side: a 20-minute ferry with city views on the way.' },
+          { time: '18:00', dur: '1 h', title: 'Coffee and baklava', note: 'Karaköy Güllüoğlu — the classic baklava stop.' }
         ]
       }
     ];
   }
   renderVals() {
     const day = this.state.day;
-    const tabs = ['День 1', 'День 2', 'День 3'].map((label, i) => ({
+    const tabs = ['Day 1', 'Day 2', 'Day 3'].map((label, i) => ({
       label: label,
       style: i === day
         ? 'background:#1565D8;color:#FFFFFF;border:1.5px solid #1565D8'
